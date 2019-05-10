@@ -1,0 +1,736 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2fbae7c3-647b-4df5-bc9c-f3925e6c1108" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Products</ID>
+  <Name>Product</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4848" scrolltop="-15372" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8625" y="17489" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Products" left="-3234" top="-13863" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="5556" height="14339" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b415000003380000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="CubeSales_Products" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4848</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-15372</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-3234</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-13863</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="158">
+            <Shape Id="Products" Expanded="true">
+              <Attributes>
+                <Attribute Id="Products" />
+                <Attribute Id="Class" />
+                <Attribute Id="Color" />
+                <Attribute Id="Days To Manufacture" />
+                <Attribute Id="Dealer Price" />
+                <Attribute Id="Scd Date End" />
+                <Attribute Id="List Price" />
+                <Attribute Id="Product Key" />
+                <Attribute Id="Reorder Point" />
+                <Attribute Id="Size" />
+                <Attribute Id="Size Range" />
+                <Attribute Id="Standard Cost" />
+                <Attribute Id="Scd Date Start" />
+                <Attribute Id="Scd Status" />
+                <Attribute Id="Style" />
+                <Attribute Id="Weight" />
+                <Attribute Id="Weight Grouping" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Safety Stock Level" Expanded="false">
+              <Attributes>
+                <Attribute Id="Safety Stock Level" />
+              </Attributes>
+              <Position x="222" y="20" />
+            </Shape>
+            <Shape Id="Model Name" Expanded="false">
+              <Attributes>
+                <Attribute Id="Model Name" />
+              </Attributes>
+              <Position x="222" y="68" />
+            </Shape>
+            <Shape Id="Subcategory" Expanded="false">
+              <Attributes>
+                <Attribute Id="Subcategory" />
+              </Attributes>
+              <Position x="425" y="68" />
+            </Shape>
+            <Shape Id="Category" Expanded="false">
+              <Attributes>
+                <Attribute Id="Category" />
+              </Attributes>
+              <Position x="627" y="68" />
+            </Shape>
+            <Shape Id="Product Line" Expanded="false">
+              <Attributes>
+                <Attribute Id="Product Line" />
+              </Attributes>
+              <Position x="425" y="116" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="e25ec27d-5601-4a4e-93d6-830ea39eb834">
+    <DataSourceViewID>Adv DM</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="984fcd69-8c1f-46a8-88c1-35c4921f117a">
+      <ID>Products</ID>
+      <Name>Product</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>606</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="16a56578-1a96-4ab6-ab27-8afca52f3872">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1e011339-2894-4a6d-ae67-0eeab0ae69f6">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ID_Product</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="0c594c23-b51a-4e8d-906d-d8f1fe75584c">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e23fc0dc-8e3e-4cec-9e56-a4045c68252a">
+          <TableID>CubeSales_Products</TableID>
+          <ColumnID>EnglishProductName</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="07001fbe-47b5-44bf-a43d-6245d1c72b52">
+          <AttributeID>Product Key</AttributeID>
+          <Name>Product Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8f394ebf-9cfe-4e27-9eea-cb319a5ca2fa">
+          <AttributeID>Class</AttributeID>
+          <Name>Class</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b3118333-b771-4b05-a504-1e4f11031dc4">
+          <AttributeID>Color</AttributeID>
+          <Name>Color</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ee96d622-d7e6-4fb4-a2ba-7903a33776b0">
+          <AttributeID>Days To Manufacture</AttributeID>
+          <Name>Days To Manufacture</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0633e850-18c5-469f-af20-b078ec40169a">
+          <AttributeID>Dealer Price</AttributeID>
+          <Name>Dealer Price</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="abc961e4-9459-4561-bb6f-3f2b2b619f23">
+          <AttributeID>List Price</AttributeID>
+          <Name>List Price</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8a5a9c13-24f2-419f-ab9c-a6147bd2aef8">
+          <AttributeID>Model Name</AttributeID>
+          <Name>Model Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8395b4b5-ddd4-4354-9757-6ae5ef8152b7">
+          <AttributeID>Reorder Point</AttributeID>
+          <Name>Reorder Point</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b5eccd21-313a-4ee1-8a41-c560ff7e2b95">
+          <AttributeID>Safety Stock Level</AttributeID>
+          <Name>Safety Stock Level</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a012794e-c2fe-44b5-8ddf-09dfe197930b">
+          <AttributeID>Size</AttributeID>
+          <Name>Size</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="45b8e6f2-7557-47e1-a9b8-390ee12299b0">
+          <AttributeID>Size Range</AttributeID>
+          <Name>Size Range</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e6b84c9e-cfbf-4514-8455-54fe26ee63b4">
+          <AttributeID>Standard Cost</AttributeID>
+          <Name>Standard Cost</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a4503a1f-6ee2-4888-bd0c-c60c87d6c1f5">
+          <AttributeID>Style</AttributeID>
+          <Name>Style</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="85dd7bed-0ec1-428d-8ad6-249d8268cb98">
+          <AttributeID>Scd Date Start</AttributeID>
+          <Name>Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="91c4a202-19ac-44f7-8d8c-9595e52d7b4d">
+          <AttributeID>Scd Date End</AttributeID>
+          <Name>End Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0f1e91b4-0154-4d47-b921-ae67e5cf7a22">
+          <AttributeID>Scd Status</AttributeID>
+          <Name>Status</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7c6ab5e3-5f20-4dbf-8579-b487f730d8d1">
+          <AttributeID>Weight</AttributeID>
+          <Name>Weight</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="57da136d-0e92-44b7-a402-778accc3fe8d">
+          <AttributeID>Weight Grouping</AttributeID>
+          <Name>Weight Grouping</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <InstanceSelection>FilteredList</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="5ccdb61f-4d18-4edb-b6ea-e42ced928916">
+      <ID>Product Key</ID>
+      <Name>Product Key</Name>
+      <EstimatedCount>504</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ad6211cb-ebf9-420c-b6a0-3ecc6284962e">
+          <DataType>WChar</DataType>
+          <DataSize>25</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0fbe4503-4e11-469d-b634-8ea647aab927">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ProductKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>FilteredList</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="88d19a08-7afa-4644-8d0d-bb7def05a177">
+      <ID>Category</ID>
+      <Name>Category</Name>
+      <EstimatedCount>5</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3e481b44-7c50-411e-be88-134f46feb1a6">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5270b778-5b03-4f2c-837a-cd33c93ad0b7">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>CategoryCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="96b3d88c-0d49-492a-8e50-d4271a16fbd1">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="cce5f02f-a298-4b99-ad5f-4e25757252bb">
+          <TableID>CubeSales_Products</TableID>
+          <ColumnID>Category</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="b60a57e9-4326-4e17-8143-af20056c6a75">
+      <ID>Class</ID>
+      <Name>Class</Name>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="636bfecd-ca8f-4f4a-bc4a-c9a51578ef6f">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fe95e089-07a4-433c-a1c7-39d53bbca777">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ClassCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8ac78b10-5592-4608-a83e-f6df9d514563">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="a4db79a1-fa59-4403-a38e-178bd2d0781a">
+          <TableID>CubeSales_Products</TableID>
+          <ColumnID>Class</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="4273fb3d-33e5-4e16-9e98-5bdd4b9e1ef9">
+      <ID>Color</ID>
+      <Name>Color</Name>
+      <EstimatedCount>10</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c8aa933c-6398-40e2-82f1-eedfb996bdae">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="54523dff-4d76-4373-8b3c-b0c766daadc3">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>Color</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="7907d7b0-f459-47af-99bb-11e959cba122">
+      <ID>Days To Manufacture</ID>
+      <Name>Days To Manufacture</Name>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="de0aa500-9fcc-48ea-9d71-80ccd816d48a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="812d8050-3428-4430-898e-f962e1b60e39">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>DaysToManufacture</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="0c1b52e1-746a-4ac1-8e54-915944656041">
+      <ID>Dealer Price</ID>
+      <Name>Dealer Price</Name>
+      <EstimatedCount>121</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="01363a5a-fafa-4197-a067-5fa37217e5f7">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1c5a7920-22dc-4350-bfd4-f3659d150eb4">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>DealerPrice</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="5063704f-4da7-4ee7-a117-c0ef350a1847">
+      <ID>List Price</ID>
+      <Name>List Price</Name>
+      <EstimatedCount>121</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f9f962a8-0323-44a5-b935-464ed349e970">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9db715c4-53af-40f0-88d0-ebfacb4dceb8">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ListPrice</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="332c1fc2-e4e7-4bed-b25c-3a4efb625f7e">
+      <ID>Model Name</ID>
+      <Name>Model Name</Name>
+      <EstimatedCount>120</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ab18691e-3f66-49d4-a871-22def9c6e947">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5ee43f52-f4ec-4bf1-918f-65ca72a5b04f">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ModelName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="57ac87ff-b938-4ca8-ae8c-0b9e588aa7ff">
+          <AttributeID>Product Line</AttributeID>
+          <Name>Product Line</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="94e95d60-2f40-4f90-87cb-edaa5150f0a5">
+          <AttributeID>Subcategory</AttributeID>
+          <Name>Subcategory</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="2bbaf24b-be70-4d02-8d19-beeacf12e265">
+      <ID>Product Line</ID>
+      <Name>Product Line</Name>
+      <EstimatedCount>5</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="36c6f82e-b728-4747-9752-89b49f69dc39">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="81c36612-e53a-4fb6-865b-f88631689302">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ProductLineCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="91dd61b3-cdc2-40e0-a897-3a2d9b27c1d7">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c7b02398-6530-4a90-80c6-048cd409cc49">
+          <TableID>CubeSales_Products</TableID>
+          <ColumnID>ProductLine</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="a637e181-15e3-4173-ab2f-b5e6e3d88fa4">
+      <ID>Reorder Point</ID>
+      <Name>Reorder Point</Name>
+      <EstimatedCount>6</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7b163a50-f7c7-4e8d-a412-0c5c9be921a5">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="57a3cfd4-4e59-4636-b7ad-3ee6299b1e5c">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ReorderPoint</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="c409c06f-ce82-4531-ba7b-f145d6906047">
+      <ID>Safety Stock Level</ID>
+      <Name>Safety Stock Level</Name>
+      <EstimatedCount>6</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6df340b5-5b63-40ae-9f24-858e9439e6e3">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f15a0e4d-07ce-4ca9-880e-cebde912a00d">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>SafetyStockLevel</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="b235c9c2-0bbc-440e-a4e4-c41274a8fe4b">
+      <ID>Size</ID>
+      <Name>Size</Name>
+      <EstimatedCount>19</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eb61a2d5-0142-48bf-8885-90207a4f8bb2">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c6ed5ddd-6dcc-405e-9c66-6d43d3e81009">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>Size</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="1fea1b4c-0011-43fe-af0b-6cf614bee9ad">
+      <ID>Size Range</ID>
+      <Name>Size Range</Name>
+      <EstimatedCount>11</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="10fa6b3e-0529-4f84-9c9d-648f80e940e0">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6d4b33e9-d3c0-43fe-9381-bc7ee6277a8b">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>SizeRange</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="e295f3d9-5463-48b5-b05a-ebdbf6fa1ec6">
+      <ID>Standard Cost</ID>
+      <Name>Standard Cost</Name>
+      <EstimatedCount>135</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b7e5d186-1d76-4ba6-8ef3-45968553e03d">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2925bdb2-90e1-4f8f-911a-b54466917ae0">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>StandardCost</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="caa2b9d1-24a9-4ae1-8347-8a5f71092bea">
+      <ID>Style</ID>
+      <Name>Style</Name>
+      <EstimatedCount>5</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8de7ba85-ac68-4c28-a544-6fbeabdabd6c">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="69816ef2-8ac5-461b-9f7d-9a2d49af8170">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>StyleCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="37d22914-8867-4dd2-ba3c-847079f486d4">
+        <DataType>WChar</DataType>
+        <DataSize>20</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="53fb9cec-d850-432e-b928-792fda07489e">
+          <TableID>CubeSales_Products</TableID>
+          <ColumnID>Style</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="cdfb705b-0951-4bf0-a511-35fd76052c26">
+      <ID>Weight</ID>
+      <Name>Weight</Name>
+      <EstimatedCount>128</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3b5f35a0-5e3a-48e4-adb5-3f340c0ccac5">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3b98193d-f5ab-4c9f-ae81-cf75ce0f6b7a">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>Weight</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8f06d1ad-c17f-4886-9aa0-4ec9a1075df0">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="274b7b31-e530-4fce-83c4-1539c012e25d">
+          <TableID>CubeSales_Products</TableID>
+          <ColumnID>WeightDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="d3bd4b94-aae9-4bc5-9217-354453273953">
+      <ID>Scd Date Start</ID>
+      <Name>Start Date</Name>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5d0576c6-868c-4f48-9c38-0f3c6248d292">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="73fe7afc-284d-4e04-b45b-fc52c64bd93f">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ScdDateStart</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="79507390-5fec-472c-b3a1-81abe5514ebf">
+        <DataType>WChar</DataType>
+        <DataSize>93</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="05da3739-8e05-4b21-b512-50ed406bc07e">
+          <TableID>CubeSales_Products</TableID>
+          <ColumnID>ScdDateStartDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="3dd3c958-49a7-4a98-ab69-466f91012993">
+      <ID>Scd Date End</ID>
+      <Name>End Date</Name>
+      <EstimatedCount>3</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="60e11968-7db3-4282-b0c5-1912ed3d9211">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7641cb30-f33c-487d-ab1c-63daaed7458f">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ScdDateEnd</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="cefcdc6e-4fcf-40f8-b075-71077e493336">
+        <DataType>WChar</DataType>
+        <DataSize>93</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e079f5d4-35ec-4143-a7ef-d75521e798b1">
+          <TableID>CubeSales_Products</TableID>
+          <ColumnID>ScdDateEndDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="ac7f715c-c352-4051-aee2-621bdb1ca9da">
+      <ID>Scd Status</ID>
+      <Name>Status</Name>
+      <EstimatedCount>2</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="34cae511-3548-498e-9f56-5e80b1411123">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0220b626-b0e9-4668-ac03-f3b71e7a4047">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>ScdStatus</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="14f0e19b-1871-4c42-9097-b958be4833d5">
+      <ID>Subcategory</ID>
+      <Name>Subcategory</Name>
+      <EstimatedCount>38</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3b400873-4ef5-4c2b-a7a9-74b227aa72fd">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5f5dbaaf-7fcd-4cdb-bef2-0f634f7aab76">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>SubcategoryCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="18f56e7b-75c0-49c8-b6c4-bb0314ce784c">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="1ace2200-69dd-41e9-98d1-24874245a6c6">
+          <TableID>CubeSales_Products</TableID>
+          <ColumnID>Subcategory</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="5b27432a-d52e-4e93-b0d8-f6da30535670">
+          <AttributeID>Category</AttributeID>
+          <Name>Category</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+    </Attribute>
+    <Attribute dwd:design-time-name="66fedac3-7308-4346-8f37-5e4bebec7759">
+      <ID>Weight Grouping</ID>
+      <Name>Weight Grouping</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="58e3f390-8671-4d7d-8f04-1a17a18adabf">
+          <DataType>WChar</DataType>
+          <DataSize>12</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6610d9e9-5287-442b-8a7b-c24fa7019b9c">
+            <TableID>CubeSales_Products</TableID>
+            <ColumnID>WeightGrouping</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="fb4b9ca1-ca43-489f-bdc9-8af3301a4a18">
+      <ID>Hierarchy</ID>
+      <Name>Product Model Categories</Name>
+      <Levels>
+        <Level dwd:design-time-name="a172ba22-be59-4672-8694-64429be31c42">
+          <ID>Category</ID>
+          <Name>Category</Name>
+          <SourceAttributeID>Category</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="6cea04c3-994b-4cbd-b9c2-c7433adb9a74">
+          <ID>Subcategory</ID>
+          <Name>Subcategory</Name>
+          <SourceAttributeID>Subcategory</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="2cacc516-6ec4-4945-8a05-3a76fb5bb2cf">
+          <ID>Model Name</ID>
+          <Name>Model</Name>
+          <SourceAttributeID>Model Name</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="8f917a43-6e31-42a2-bf3b-564f2d422a0c">
+      <ID>Hierarchy 1</ID>
+      <Name>Product Categories</Name>
+      <Levels>
+        <Level dwd:design-time-name="34bb5188-b652-4680-803c-e6969b607071">
+          <ID>Category</ID>
+          <Name>Category</Name>
+          <SourceAttributeID>Category</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="b06698e9-ba1b-4af6-bcbd-efd4f76eeefd">
+          <ID>Subcategory</ID>
+          <Name>Subcategory</Name>
+          <SourceAttributeID>Subcategory</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="581df0cc-2552-4da8-8585-614e6ebfaf79">
+          <ID>Product</ID>
+          <Name>Product</Name>
+          <SourceAttributeID>Products</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="a5ec065c-53c8-4faf-9090-5e3ebe0627ef">
+      <ID>Hierarchy 2</ID>
+      <Name>Product Model Lines</Name>
+      <Levels>
+        <Level dwd:design-time-name="ce803592-3820-4aef-aed5-dbe695632382">
+          <ID>Product Line</ID>
+          <Name>Product Line</Name>
+          <SourceAttributeID>Product Line</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="cbf348bd-35d0-401e-88ab-8df8460fae57">
+          <ID>Model Name</ID>
+          <Name>Model</Name>
+          <SourceAttributeID>Model Name</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="f0c5e7b1-6b92-429d-a69c-7b1808f6e19e">
+      <ID>Hierarchy 3</ID>
+      <Name>Stock Level</Name>
+      <Levels>
+        <Level dwd:design-time-name="85d4735e-6a64-4a83-ad6e-771353b4f49d">
+          <ID>Safety Stock Level</ID>
+          <Name>Safety Stock Level</Name>
+          <SourceAttributeID>Safety Stock Level</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="824d56f8-e63a-498d-adac-35e26a38e1c2">
+          <ID>Product</ID>
+          <Name>Product</Name>
+          <SourceAttributeID>Products</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+</Dimension>

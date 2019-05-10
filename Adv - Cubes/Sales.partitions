@@ -1,0 +1,3383 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ebeb4b25-2834-49d6-8936-28dd6061b50f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Sales</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Sales</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="d65f6b6c-cf07-41a0-a083-60981c4b73bb">
+          <ID>Sales</ID>
+          <Name>Sales</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="TableBinding" dwd:design-time-name="094a27d1-dec0-4dd7-8379-aae51409be21">
+            <DataSourceID>Adv DM</DataSourceID>
+            <DbSchemaName>CubeSales</DbSchemaName>
+            <DbTableName>Sales</DbTableName>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>121287</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2009-02-24T21:11:44Z</CreatedTimestamp>
+          <LastSchemaUpdate>2009-02-24T21:11:44Z</LastSchemaUpdate>
+          <EstimatedRows>121287</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>ID Date Order</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                  <EstimatedCount>1827</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Number Of Month</AttributeID>
+                  <EstimatedCount>32</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Week Number Of Year</AttributeID>
+                  <EstimatedCount>54</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Number Of Year</AttributeID>
+                  <EstimatedCount>13</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Calendar Quarter</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Calendar Quarter Of Year</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Calendar Year</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Calendar Semester</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Calendar Semester Of Year</AttributeID>
+                  <EstimatedCount>2</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Quarter</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Quarter Of Year</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Year</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Semester</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Fiscal Semester Of Year</AttributeID>
+                  <EstimatedCount>2</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Day Name Of Week</AttributeID>
+                  <EstimatedCount>8</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month Name</AttributeID>
+                  <EstimatedCount>61</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Number Of Week</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day Number Of Year</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date Calculations</AttributeID>
+                  <EstimatedCount>1</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Sales Channel</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Sales Channel</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Product</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Products</AttributeID>
+                  <EstimatedCount>606</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Product Key</AttributeID>
+                  <EstimatedCount>504</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Category</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Class</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Color</AttributeID>
+                  <EstimatedCount>10</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Days To Manufacture</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dealer Price</AttributeID>
+                  <EstimatedCount>121</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>List Price</AttributeID>
+                  <EstimatedCount>121</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Model Name</AttributeID>
+                  <EstimatedCount>120</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Product Line</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Reorder Point</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Safety Stock Level</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Size</AttributeID>
+                  <EstimatedCount>19</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Size Range</AttributeID>
+                  <EstimatedCount>11</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Standard Cost</AttributeID>
+                  <EstimatedCount>135</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Style</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Weight</AttributeID>
+                  <EstimatedCount>128</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Scd Date Start</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Scd Date End</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Scd Status</AttributeID>
+                  <EstimatedCount>2</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Subcategory</AttributeID>
+                  <EstimatedCount>38</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Customer</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Customer</AttributeID>
+                  <EstimatedCount>18485</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>City</AttributeID>
+                  <EstimatedCount>286</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Commute Distance</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date First Purchase</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Education</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Occupation</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Email Address</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Gender</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Home Owner</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Marital Status</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Number Of Cars Owned</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Number Of Childre At Home</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Phone</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Total Children</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Yearly Income</AttributeID>
+                  <EstimatedCount>1</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>State Province</AttributeID>
+                  <EstimatedCount>51</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Country</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Sales Territory</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Sales Territory</AttributeID>
+                  <EstimatedCount>11</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sales Territory Country</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sales Territory Group</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Employee</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Employee</AttributeID>
+                  <EstimatedCount>318</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>ID Parent Employee</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Birth Date</AttributeID>
+                  <EstimatedCount>280</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Department Name</AttributeID>
+                  <EstimatedCount>17</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Email Address</AttributeID>
+                  <EstimatedCount>291</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Emergency Contact Name</AttributeID>
+                  <EstimatedCount>291</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Emergency Contact Phone</AttributeID>
+                  <EstimatedCount>289</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Gender</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Hire Date</AttributeID>
+                  <EstimatedCount>165</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Hire Year</AttributeID>
+                  <EstimatedCount>9</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Base Rate</AttributeID>
+                  <EstimatedCount>67</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Marital Status</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Pay Frequency</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Phone</AttributeID>
+                  <EstimatedCount>289</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Salaried Flag</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Sales Person Flag</AttributeID>
+                  <EstimatedCount>3</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Title</AttributeID>
+                  <EstimatedCount>68</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Scd Date Start</AttributeID>
+                  <EstimatedCount>178</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Scd Date End</AttributeID>
+                  <EstimatedCount>14</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Scd Status</AttributeID>
+                  <EstimatedCount>2</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Currency</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Currency</AttributeID>
+                  <EstimatedCount>106</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Currency Code</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Promotion</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Promotion</AttributeID>
+                  <EstimatedCount>17</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Max Quantity</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Min Quantity</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Promotion Type</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Promotion Category</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Discount Percent</AttributeID>
+                  <EstimatedCount>10</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Start Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>End Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Promotion Type 1</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Reseller</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Reseller</AttributeID>
+                  <EstimatedCount>702</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Address</AttributeID>
+                  <EstimatedCount>688</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Annual Revenue</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Annual Sales</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Bank Name</AttributeID>
+                  <EstimatedCount>8</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Business Type</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>City</AttributeID>
+                  <EstimatedCount>452</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>First Order Year</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Last Order Year</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Last Order Month</AttributeID>
+                  <EstimatedCount>13</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Number Of Employees</AttributeID>
+                  <EstimatedCount>77</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Postal Code</AttributeID>
+                  <EstimatedCount>502</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>State Province</AttributeID>
+                  <EstimatedCount>66</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Min Payment Amount</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Min Payment Type</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Order Frequency</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Product Line</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year Opened</AttributeID>
+                  <EstimatedCount>33</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>English Country</AttributeID>
+                  <EstimatedCount>7</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Product Line</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Product Line</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Product Line</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Product Line</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation d</ID>
+              <Name>Aggregation d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Product Line</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation e</ID>
+              <Name>Aggregation e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Safety Stock Level</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation f</ID>
+              <Name>Aggregation f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Safety Stock Level</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 10</ID>
+              <Name>Aggregation 10</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Safety Stock Level</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 11</ID>
+              <Name>Aggregation 11</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 12</ID>
+              <Name>Aggregation 12</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 13</ID>
+              <Name>Aggregation 13</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 14</ID>
+              <Name>Aggregation 14</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Product Line</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 15</ID>
+              <Name>Aggregation 15</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Safety Stock Level</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 16</ID>
+              <Name>Aggregation 16</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Promotion</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 17</ID>
+              <Name>Aggregation 17</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 18</ID>
+              <Name>Aggregation 18</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 19</ID>
+              <Name>Aggregation 19</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1a</ID>
+              <Name>Aggregation 1a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1b</ID>
+              <Name>Aggregation 1b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1c</ID>
+              <Name>Aggregation 1c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1d</ID>
+              <Name>Aggregation 1d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Safety Stock Level</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1e</ID>
+              <Name>Aggregation 1e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1f</ID>
+              <Name>Aggregation 1f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Safety Stock Level</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 20</ID>
+              <Name>Aggregation 20</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Product Line</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Safety Stock Level</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 21</ID>
+              <Name>Aggregation 21</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Bank Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 22</ID>
+              <Name>Aggregation 22</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Bank Name</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 23</ID>
+              <Name>Aggregation 23</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Bank Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 24</ID>
+              <Name>Aggregation 24</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 25</ID>
+              <Name>Aggregation 25</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Bank Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 26</ID>
+              <Name>Aggregation 26</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 27</ID>
+              <Name>Aggregation 27</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Product Line</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 28</ID>
+              <Name>Aggregation 28</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Bank Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 29</ID>
+              <Name>Aggregation 29</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Subcategory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2a</ID>
+              <Name>Aggregation 2a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Channel</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Last Order Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2b</ID>
+              <Name>Aggregation 2b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Product Line</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Bank Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2c</ID>
+              <Name>Aggregation 2c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Category</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Bank Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2d</ID>
+              <Name>Aggregation 2d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Safety Stock Level</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2e</ID>
+              <Name>Aggregation 2e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2f</ID>
+              <Name>Aggregation 2f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 30</ID>
+              <Name>Aggregation 30</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 31</ID>
+              <Name>Aggregation 31</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sales Territory Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Last Order Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 32</ID>
+              <Name>Aggregation 32</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Promotion Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Last Order Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 33</ID>
+              <Name>Aggregation 33</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Safety Stock Level</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Bank Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 34</ID>
+              <Name>Aggregation 34</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>State Province</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 35</ID>
+              <Name>Aggregation 35</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Order Frequency</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Last Order Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 36</ID>
+              <Name>Aggregation 36</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Business Type</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Last Order Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 37</ID>
+              <Name>Aggregation 37</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Calendar Quarter</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Last Order Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 38</ID>
+              <Name>Aggregation 38</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>ID Date Order</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Date Calculations</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Channel</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Product</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Customer</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>English Country</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Sales Territory</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Employee</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Currency</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Promotion</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Reseller</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Bank Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Bridge Reseller Users</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="fd2ba3d7-f5e4-40a1-a1de-8075b3eddec3">
+          <ID>Bridge Reseller Users</ID>
+          <Name>Bridge Reseller Users</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="06f1d8e0-170e-4d8e-a6f9-00c3f3de2023">
+            <DataSourceViewID>Adv DM</DataSourceViewID>
+            <TableID>Security_Bridge_ResellerUsers</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Bridge Employees Users</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="78ba9379-ee8e-4ba6-96d7-96f95ae1e4f1">
+          <ID>Bridge Employees Users</ID>
+          <Name>Bridge Employees Users</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="11ba384e-ff0e-4cfc-828b-b72620f4a44c">
+            <DataSourceViewID>Adv DM</DataSourceViewID>
+            <TableID>Security_BridgeEmployeesUsers</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Sales Quotas</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="6f61ce21-3b4e-4889-b88f-e7c1172fd44b">
+          <ID>Sales Quotas</ID>
+          <Name>Sales Quotas</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="71a42449-06f1-4f4c-9625-1c14d414bd3e">
+            <DataSourceViewID>Adv DM</DataSourceViewID>
+            <TableID>CubeSales_SalesQuotas</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Bridge Orders Sales Reasons</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="461aa2da-8ef8-4ffa-a16a-7e20d92dc7c0">
+          <ID>Bridge Orders Sales Reasons</ID>
+          <Name>Bridge Orders Sales Reasons</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="df40f73a-04b1-4b0c-8f39-fd924e2b9b57">
+            <DataSourceViewID>Adv DM</DataSourceViewID>
+            <TableID>CubeSales_BridgeOrdersSalesReasons</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

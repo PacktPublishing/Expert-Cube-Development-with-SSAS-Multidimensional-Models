@@ -1,0 +1,134 @@
+﻿<ConfigurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Database>
+    <DataSources>
+      <DataSource>
+        <ID>Adv DM</ID>
+        <ConnectionString>Provider=SQLOLEDB.1;Data Source=Demo;Integrated Security=SSPI;Initial Catalog=Adv_DM</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+    </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>Accounts</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Currency</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Customer</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Date Tool</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Date</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Department</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Employee</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Order Band</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Organization</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Products</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Promotion</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Reseller</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Sales Channel</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Sales Order</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Sales Reasons</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Sales Territory</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Scenario</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Users</ID>
+      </Dimension>
+    </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>Adv DM</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Fact Amounts</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Amounts</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>Adv DM 1</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Sales</ID>
+            <Partitions>
+              <Partition>
+                <ID>Sales</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Bridge Orders Sales Reasons</ID>
+            <Partitions>
+              <Partition>
+                <ID>Bridge Orders Sales Reasons</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Bridge Reseller Users</ID>
+            <Partitions>
+              <Partition>
+                <ID>Bridge Reseller Users</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Bridge Employees Users</ID>
+            <Partitions>
+              <Partition>
+                <ID>Bridge Employees Users</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Sales Quotas</ID>
+            <Partitions>
+              <Partition>
+                <ID>Sales Quotas</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
+    <DataSourceImpersonationInfo>
+      <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+      <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+    </DataSourceImpersonationInfo>
+  </Database>
+</ConfigurationSettings>

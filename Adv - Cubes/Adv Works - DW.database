@@ -1,0 +1,156 @@
+﻿<Database xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="fbcd0060-1ceb-4199-807f-d7b556b2cfb0" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Adv Works - DW</ID>
+  <Name>Adv Works - DW</Name>
+  <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>B77886FF900E4C18A95F79A6BFA488A9</Name>
+      <Value>
+        <Results xmlns="B77886FF900E4C18A95F79A6BFA488A9">
+          <Result sourcePath="[Account]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Currency]" sourceType="Dimension" rule="11"></Result>
+          <Result sourcePath="[Currency]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Customer]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Customer]" sourceType="Dimension" rule="14"></Result>
+          <Result sourcePath="[Date].[Date Calculations]" sourceType="DimensionAttribute" rule="18"></Result>
+          <Result sourcePath="[Date]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Date].[Fiscal].[Fiscal Semester]" sourceType="Level" rule="29"></Result>
+          <Result sourcePath="[Employee].[Employee]" sourceType="DimensionAttribute" rule="19"></Result>
+          <Result sourcePath="[Date].[Calendar].[Calendar Semester]" sourceType="Level" rule="29"></Result>
+          <Result sourcePath="[Date]" sourceType="Dimension" rule="14"></Result>
+          <Result sourcePath="[Department].[Department]" sourceType="DimensionAttribute" rule="19"></Result>
+          <Result sourcePath="[Department]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Organization].[Organization]" sourceType="DimensionAttribute" rule="19"></Result>
+          <Result sourcePath="[Employee]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Product]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Organization]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Product]" sourceType="Dimension" rule="31"></Result>
+          <Result sourcePath="[Promotion]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Promotion]" sourceType="Dimension" rule="14"></Result>
+          <Result sourcePath="[Promotion]" sourceType="Dimension" rule="31"></Result>
+          <Result sourcePath="[Product]" sourceType="Dimension" rule="14"></Result>
+          <Result sourcePath="[Customer]" sourceType="Dimension" rule="31"></Result>
+          <Result sourcePath="[Reseller]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Reseller]" sourceType="Dimension" rule="14"></Result>
+          <Result sourcePath="[Reseller]" sourceType="Dimension" rule="31"></Result>
+          <Result sourcePath="[Sales Channel]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Sales Order]" sourceType="Dimension" rule="31"></Result>
+          <Result sourcePath="[Sales Reason]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Sales Territory]" sourceType="Dimension" rule="14"></Result>
+          <Result sourcePath="[Sales Territory]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Sales Order]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Sales Reason]" sourceType="Dimension" rule="11"></Result>
+          <Result sourcePath="[Sales Territory]" sourceType="Dimension" rule="31"></Result>
+          <Result sourcePath="[Scenario]" sourceType="Dimension" rule="13"></Result>
+          <Result sourcePath="[Financial].[Accounts].[ID Account]" sourceType="CubeAttribute" rule="6"></Result>
+        </Results>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T08:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <LastUpdate>0001-01-01T08:00:00Z</LastUpdate>
+  <DataSourceImpersonationInfo>
+    <ImpersonationMode>Default</ImpersonationMode>
+    <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+  </DataSourceImpersonationInfo>
+  <Dimensions />
+  <Cubes />
+  <Assemblies />
+  <DataSources />
+  <DataSourceViews />
+  <Accounts>
+    <Account dwd:design-time-name="46fb6cac-d539-4d62-818a-36db39d574ff">
+      <AccountType>Income</AccountType>
+    </Account>
+    <Account dwd:design-time-name="7088a22c-4193-43e6-9b48-db490196617b">
+      <AccountType>Expense</AccountType>
+    </Account>
+    <Account dwd:design-time-name="bedf8e43-70fb-40db-8ad8-630a82a0feeb">
+      <AccountType>Flow</AccountType>
+    </Account>
+    <Account dwd:design-time-name="de6b67ec-fcd3-41bd-a182-9f257f3f1e4a">
+      <AccountType>Balance</AccountType>
+      <AggregationFunction>LastNonEmpty</AggregationFunction>
+    </Account>
+    <Account dwd:design-time-name="c24b8a3c-e34e-4d3d-a4d0-6a37672a67bf">
+      <AccountType>Asset</AccountType>
+    </Account>
+    <Account dwd:design-time-name="2616fa7d-4033-4d45-9fb3-0879138e1518">
+      <AccountType>Liability</AccountType>
+    </Account>
+    <Account dwd:design-time-name="0918220c-14b4-4d35-89e4-539dd7afe328">
+      <AccountType>Statistical</AccountType>
+      <AggregationFunction>LastNonEmpty</AggregationFunction>
+    </Account>
+  </Accounts>
+  <Roles />
+  <DatabasePermissions>
+    <DatabasePermission dwd:design-time-name="6694ee16-c70b-447e-b1fe-f1f0ac18e5dc">
+      <ID>DatabasePermission 5</ID>
+      <Name>DatabasePermission 5</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Role 5</RoleID>
+      <ReadDefinition>Allowed</ReadDefinition>
+      <Read>Allowed</Read>
+    </DatabasePermission>
+    <DatabasePermission dwd:design-time-name="11f51b5c-c2c5-42c0-a368-81418c60c44e">
+      <ID>DatabasePermission 7</ID>
+      <Name>DatabasePermission 7</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Cell Security - Sample 2</RoleID>
+      <Read>Allowed</Read>
+    </DatabasePermission>
+    <DatabasePermission dwd:design-time-name="57c0aef4-2b06-4776-ab22-e37119532715">
+      <ID>DatabasePermission 8</ID>
+      <Name>DatabasePermission 8</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Cell Security - Sample 3</RoleID>
+      <Read>Allowed</Read>
+    </DatabasePermission>
+    <DatabasePermission dwd:design-time-name="20011ef0-f12a-4b74-ba6e-26b85a7aa216">
+      <ID>DatabasePermission 9</ID>
+      <Name>DatabasePermission 9</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Dimension Security - Sample 1</RoleID>
+      <Read>Allowed</Read>
+    </DatabasePermission>
+    <DatabasePermission dwd:design-time-name="9ec9efba-26a5-49d2-a44c-3af7b9f82add">
+      <ID>DatabasePermission 10</ID>
+      <Name>DatabasePermission 10</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Dynamic Security - Sample 1</RoleID>
+      <Read>Allowed</Read>
+    </DatabasePermission>
+    <DatabasePermission dwd:design-time-name="1f3d495f-b9eb-487f-9738-2678b8c9c1e7">
+      <ID>DatabasePermission 11</ID>
+      <Name>DatabasePermission 11</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Dynamic Security - Using SP</RoleID>
+      <Read>Allowed</Read>
+    </DatabasePermission>
+    <DatabasePermission dwd:design-time-name="5b62188c-8e75-4095-9a70-d29890e2e2b2">
+      <ID>DatabasePermission 12</ID>
+      <Name>DatabasePermission 12</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Dimension Security - Parent Child</RoleID>
+      <Read>Allowed</Read>
+    </DatabasePermission>
+    <DatabasePermission dwd:design-time-name="f9bfc0cb-b79e-4bcd-adcf-21bba3e736da">
+      <ID>DatabasePermission</ID>
+      <Name>DatabasePermission</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Dynamic Cell Data Security</RoleID>
+      <Read>Allowed</Read>
+    </DatabasePermission>
+  </DatabasePermissions>
+</Database>

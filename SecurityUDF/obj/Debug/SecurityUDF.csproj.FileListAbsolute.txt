@@ -1,0 +1,34 @@
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Demo\Solution - Chapter 7\SecurityUDF\bin\Debug\SecurityUDF.dll
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Demo\Solution - Chapter 7\SecurityUDF\bin\Debug\SecurityUDF.pdb
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Demo\Solution - Chapter 7\SecurityUDF\bin\Debug\msmgdsrv.dll
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Demo\Solution - Chapter 7\SecurityUDF\obj\Debug\ResolveAssemblyReference.cache
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Demo\Solution - Chapter 7\SecurityUDF\obj\Debug\SecurityUDF.dll
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Demo\Solution - Chapter 7\SecurityUDF\obj\Debug\SecurityUDF.pdb
+C:\Users\Chris Webb\Documents\New AS Book\Sample DB\Solution\SecurityUDF\bin\Debug\SecurityUDF.dll
+C:\Users\Chris Webb\Documents\New AS Book\Sample DB\Solution\SecurityUDF\bin\Debug\SecurityUDF.pdb
+C:\Users\Chris Webb\Documents\New AS Book\Sample DB\Solution\SecurityUDF\bin\Debug\msmgdsrv.dll
+C:\Users\Chris Webb\Documents\New AS Book\Sample DB\Solution\SecurityUDF\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Chris Webb\Documents\New AS Book\Sample DB\Solution\SecurityUDF\obj\Debug\SecurityUDF.dll
+C:\Users\Chris Webb\Documents\New AS Book\Sample DB\Solution\SecurityUDF\obj\Debug\SecurityUDF.pdb
+C:\Dev\BookSsas2008\Ch06\Solution\SecurityUDF\bin\Debug\SecurityUDF.dll
+C:\Dev\BookSsas2008\Ch06\Solution\SecurityUDF\bin\Debug\SecurityUDF.pdb
+C:\Dev\BookSsas2008\Ch06\Solution\SecurityUDF\bin\Debug\msmgdsrv.dll
+C:\Dev\BookSsas2008\Ch06\Solution\SecurityUDF\obj\Debug\ResolveAssemblyReference.cache
+C:\Dev\BookSsas2008\Ch06\Solution\SecurityUDF\obj\Debug\SecurityUDF.dll
+C:\Dev\BookSsas2008\Ch06\Solution\SecurityUDF\obj\Debug\SecurityUDF.pdb
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Final Demo\SecurityUDF\bin\Debug\SecurityUDF.dll
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Final Demo\SecurityUDF\bin\Debug\SecurityUDF.pdb
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Final Demo\SecurityUDF\bin\Debug\msmgdsrv.dll
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Final Demo\SecurityUDF\obj\Debug\ResolveAssemblyReference.cache
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Final Demo\SecurityUDF\obj\Debug\SecurityUDF.dll
+H:\Sorgenti\SqlBi\Libro con Chris Webb\Final Demo\SecurityUDF\obj\Debug\SecurityUDF.pdb
+C:\Dev\BookExpertCube2012\SecurityUDF\bin\Debug\SecurityUDF.dll
+C:\Dev\BookExpertCube2012\SecurityUDF\bin\Debug\SecurityUDF.pdb
+C:\Dev\BookExpertCube2012\SecurityUDF\bin\Debug\msmgdsrv.dll
+C:\Dev\BookExpertCube2012\SecurityUDF\bin\Debug\Microsoft.Data.DataFeedClient.dll
+C:\Dev\BookExpertCube2012\SecurityUDF\obj\Debug\SecurityUDF.dll
+C:\Dev\BookExpertCube2012\SecurityUDF\obj\Debug\SecurityUDF.pdb
+H:\Books\Expert Cube Development With SSAS 2008\Second Edition\Solution\SecurityUDF\bin\Debug\SecurityUDF.dll
+H:\Books\Expert Cube Development With SSAS 2008\Second Edition\Solution\SecurityUDF\bin\Debug\SecurityUDF.pdb
+H:\Books\Expert Cube Development With SSAS 2008\Second Edition\Solution\SecurityUDF\obj\Debug\SecurityUDF.dll
+H:\Books\Expert Cube Development With SSAS 2008\Second Edition\Solution\SecurityUDF\obj\Debug\SecurityUDF.pdb

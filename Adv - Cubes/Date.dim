@@ -1,0 +1,807 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="60ff08bf-0b31-4f54-b58e-1f1a20390e55" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Date</ID>
+  <Name>Date</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4557" scrolltop="-14477" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="13044" y="36195" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Date" left="-3552" top="-14552" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4524" height="18493" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000ac1100003d480000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="CubeCommon_Date" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4557</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-14477</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-3552</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-14552</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="5" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="215">
+            <Shape Id="Date" Expanded="true">
+              <Attributes>
+                <Attribute Id="Date" />
+                <Attribute Id="Calendar Date Order Calculations" />
+                <Attribute Id="Date Calculations" />
+                <Attribute Id="English Day Name Of Week" />
+                <Attribute Id="Day Number Of Month" />
+                <Attribute Id="Day Number Of Week" />
+                <Attribute Id="Day Number Of Year" />
+                <Attribute Id="Week Number Of Year" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Month Name" Expanded="true">
+              <Attributes>
+                <Attribute Id="Month Name" />
+                <Attribute Id="Month Number Of Year" />
+              </Attributes>
+              <Position x="293" y="20" />
+            </Shape>
+            <Shape Id="Calendar Quarter" Expanded="true">
+              <Attributes>
+                <Attribute Id="Calendar Quarter" />
+                <Attribute Id="Calendar Quarter Of Year" />
+              </Attributes>
+              <Position x="567" y="20" />
+            </Shape>
+            <Shape Id="Fiscal Quarter" Expanded="true">
+              <Attributes>
+                <Attribute Id="Fiscal Quarter" />
+                <Attribute Id="Fiscal Quarter Of Year" />
+              </Attributes>
+              <Position x="841" y="20" />
+            </Shape>
+            <Shape Id="Fiscal Semester" Expanded="true">
+              <Attributes>
+                <Attribute Id="Fiscal Semester" />
+                <Attribute Id="Fiscal Semester Of Year" />
+              </Attributes>
+              <Position x="1115" y="20" />
+            </Shape>
+            <Shape Id="Fiscal Year" Expanded="false">
+              <Attributes>
+                <Attribute Id="Fiscal Year" />
+              </Attributes>
+              <Position x="1388" y="20" />
+            </Shape>
+            <Shape Id="Calendar Semester" Expanded="true">
+              <Attributes>
+                <Attribute Id="Calendar Semester" />
+                <Attribute Id="Calendar Semester Of Year" />
+              </Attributes>
+              <Position x="841" y="92" />
+            </Shape>
+            <Shape Id="Calendar Year" Expanded="false">
+              <Attributes>
+                <Attribute Id="Calendar Year" />
+              </Attributes>
+              <Position x="1115" y="92" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="758b5e6d-1033-47e1-8bd6-7c7a32d42ce9">
+    <DataSourceViewID>Adv DM</DataSourceViewID>
+  </Source>
+  <Type>Time</Type>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="bb6d165a-cbb8-4156-85d7-dcf90c1e45c3">
+      <ID>Date</ID>
+      <Name>Date</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>1827</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9deb5235-6d2b-4b85-8c9c-34f507fce011">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="51c1659e-3b75-416a-a5e2-0803688c47e7">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>ID_Date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a80d8c71-6d0f-4593-8656-7acb19af1782">
+        <DataType>WChar</DataType>
+        <DataSize>93</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c34ba0f5-d0b1-447f-b4d7-1f20117680b2">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>SimpleDate</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="aefb9882-acc8-4754-81d3-5979e1b069ad">
+          <AttributeID>Day Number Of Month</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Day of Month</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="971005c7-41c2-428e-abb7-3d9affa1ed46">
+          <AttributeID>Week Number Of Year</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Week of Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7fa95d16-85a5-4125-a5c0-f52372302456">
+          <AttributeID>English Day Name Of Week</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Day Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f553c2c1-a212-49be-b6c7-00513fb84105">
+          <AttributeID>Month Name</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Month Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="69dafbac-5f16-46fb-9c39-c66798ec6a67">
+          <AttributeID>Day Number Of Week</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Day of Week</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4f46c48e-db64-4f77-8d4b-a55633a56f45">
+          <AttributeID>Day Number Of Year</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Day of Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0c22004c-8a3b-4bc9-8808-c8d6b95247e3">
+          <AttributeID>Date Calculations</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Date Calculations</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="437ef571-d8b4-4ddf-b1c8-b399d1b1036f">
+        <DataType>Date</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="550e00b8-6049-48ec-9e3f-1283ae32f2bf">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>Date</ColumnID>
+        </Source>
+      </ValueColumn>
+      <InstanceSelection>FilteredList</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="d57b99fd-0f1c-4b81-990f-05be35fd6b95">
+      <ID>Day Number Of Month</ID>
+      <Name>Day of Month</Name>
+      <Type>DayOfMonth</Type>
+      <EstimatedCount>32</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="00894279-338b-4fb5-93d5-94bf10a15871">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="589ba397-c85b-4fd5-8568-c17b2f5eb6c5">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>DayNumberOfMonth</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="21003871-2794-4791-8929-f28d1b20106a">
+      <ID>Week Number Of Year</ID>
+      <Name>Week of Year</Name>
+      <Type>WeekOfYear</Type>
+      <EstimatedCount>54</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="43aa0d51-bb28-4338-be74-d34af9748aa8">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9b1c6522-38d9-427c-ad2d-e0ba7aa15061">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>WeekNumberOfYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="bdb897ce-c09e-4289-b829-779dda9eb11f">
+      <ID>Month Number Of Year</ID>
+      <Name>Month of Year</Name>
+      <Type>MonthOfYear</Type>
+      <EstimatedCount>13</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cad923cc-878a-429b-879b-72444337ab31">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0a513dbf-1bb7-4e02-906f-effe7b712b74">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>MonthNumberOfYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="03f13f5d-875e-442a-b0f4-e85990a6469c">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="2d8d91ac-5c84-444e-b3d2-824c120ec6fa">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>EnglishMonthName</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="ebfae999-ac44-42f2-8543-da8f968ddd78">
+        <DataType>UnsignedTinyInt</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="81b7cf63-acbc-4690-8ee6-0ad5781efecf">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>MonthNumberOfYear</ColumnID>
+        </Source>
+      </ValueColumn>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="4f4bfeed-9566-4135-a4d6-1b4d942ec0e5">
+      <ID>Calendar Quarter</ID>
+      <Name>Calendar Quarter</Name>
+      <Type>Quarters</Type>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="03364f17-3ed6-46f0-8369-5566c7bb3794">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="15139195-13c3-415c-8ab3-98288b30af51">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>CalendarYear</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="93f81ad1-0309-4c25-b5dd-75ccc19ae4aa">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1ee6ba0d-d60f-4e84-8a0a-a83a71e5ed1c">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>CalendarQuarter</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="43e2e002-2654-4c79-a763-745de8218292">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="86277716-05a8-4ee0-963c-76d5b18171de">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>CalendarQuarterDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="a69e6ba1-384c-4e33-949e-22ac51163bfd">
+          <AttributeID>Calendar Quarter Of Year</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Calendar Quarter Of Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ef0eb245-1ef7-4a8f-9cfe-c71e9b5a3bbb">
+          <AttributeID>Calendar Semester</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Calendar Semester</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7b1aa808-9120-465a-97e2-e2a58fcc08fa">
+          <AttributeID>Fiscal Quarter</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Fiscal Quarter</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Calendar</AttributeHierarchyDisplayFolder>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="36f409d5-5a4a-457e-8849-591b2b054e6c">
+      <ID>Calendar Quarter Of Year</ID>
+      <Name>Calendar Quarter Of Year</Name>
+      <Type>QuarterOfYear</Type>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e94030c9-ec80-403f-8011-95e6dc051ec0">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dedab7df-5fa6-436f-b62e-931788fdd3c2">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>CalendarQuarterOfYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Calendar</AttributeHierarchyDisplayFolder>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="680d7300-0b70-4128-bb2c-60de30806e47">
+      <ID>Calendar Year</ID>
+      <Name>Calendar Year</Name>
+      <Type>Years</Type>
+      <EstimatedCount>6</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="97da4542-612a-4433-803f-9bfcc9a15e89">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="efaa9eb8-4e00-49b9-ad24-a886ba4f3ed6">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>CalendarYearValue</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="46ecf1f5-b1bd-4c87-bbea-5feb57bdbbb2">
+        <DataType>WChar</DataType>
+        <DataSize>7</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="34f60c82-b923-4646-bf29-9b692c560f9a">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>CalendarYearDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="f19b1101-b796-4967-854d-58e6010a3132">
+        <DataType>Integer</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="6f2e307d-e1e8-4e2a-9043-496b4934916c">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>CalendarYearValue</ColumnID>
+        </Source>
+      </ValueColumn>
+      <AttributeHierarchyDisplayFolder>Calendar</AttributeHierarchyDisplayFolder>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="c03e46ac-2379-4b41-a6e7-78a8642b2a3a">
+      <ID>Calendar Semester</ID>
+      <Name>Calendar Semester</Name>
+      <Type>HalfYears</Type>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b4ce36fe-309d-48e3-8737-75d40c34464e">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0393a85a-bdde-4fad-8cc4-ad4471eda8bd">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>CalendarYear</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="3b4b681c-0d29-4920-a080-48bfc71a28f9">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7315a5bd-4286-41d1-993a-14b214de3953">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>CalendarSemester</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="20fbe88f-ff78-4d88-a2f1-e803981565fb">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="46c5e86f-d8d4-4e2e-904f-0a1e0806480d">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>CalendarSemesterDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="fbba38da-c796-4c28-8246-bf9f7c8756e2">
+          <AttributeID>Calendar Year</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Calendar Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0bb0c64c-c557-4c1a-bab3-4f35469ed232">
+          <AttributeID>Calendar Semester Of Year</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Calendar Semester Of Year</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="844088d0-26b4-42c9-a1b4-e7f5e6a921b5">
+      <ID>Calendar Semester Of Year</ID>
+      <Name>Calendar Semester Of Year</Name>
+      <Type>HalfYearOfYear</Type>
+      <EstimatedCount>2</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7168e302-c6a8-4e81-84e0-3984f48133a2">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="edf542f1-283f-4410-a4d2-5195d956b46f">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>CalendarSemesterOfYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Calendar</AttributeHierarchyDisplayFolder>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="3b48f664-af12-426b-96ad-74f5fc12bf90">
+      <ID>Fiscal Quarter</ID>
+      <Name>Fiscal Quarter</Name>
+      <Type>FiscalQuarters</Type>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b61186ac-62fb-4df0-aa5b-65e8c3bfb54d">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f58a6532-de4f-4143-82cc-7a31803a0400">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>FiscalYear</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="a38f5405-c9d6-4d40-9dd4-d6eca276bd64">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d09a7974-1468-4fa9-91b1-f8c69d5a95e0">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>FiscalQuarter</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="690a42af-bc5f-4c52-80fb-6e9e88e6b6a7">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e182dd48-4771-4280-b86e-4ecd8d7fe3f5">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>FiscalQuarterDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="28e809ef-b744-451a-84dd-6565115b43d5">
+          <AttributeID>Fiscal Quarter Of Year</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Fiscal Quarter Of Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="725cf577-153a-4873-8218-04044a9137d9">
+          <AttributeID>Fiscal Semester</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Fiscal Semester</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Fiscal</AttributeHierarchyDisplayFolder>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="5d26cabe-5bea-4d27-8fca-d7441f927aaf">
+      <ID>Fiscal Quarter Of Year</ID>
+      <Name>Fiscal Quarter Of Year</Name>
+      <Type>FiscalQuarterOfYear</Type>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b9fec1f6-35f7-4b75-a1eb-4e0f3c56faf5">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ecce4265-a551-413a-9a40-826a5e98cb04">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>FiscalQuarterOfYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Fiscal</AttributeHierarchyDisplayFolder>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="1bfb1432-6e20-4097-98f2-6da7b6679aac">
+      <ID>Fiscal Year</ID>
+      <Name>Fiscal Year</Name>
+      <Type>FiscalYears</Type>
+      <EstimatedCount>6</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="25bfdb8e-2816-43b9-83ed-0fd19150949c">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="38a3cd65-b970-4151-966c-af79d279ed01">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>FiscalYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="4965ab7c-6afb-4ea5-95c0-8ff4f09b7624">
+        <DataType>WChar</DataType>
+        <DataSize>7</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="87230e17-36ce-4585-9c6a-2847e7e9ec16">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>FiscalYearDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="e72519e9-ce2b-43ae-8625-8a482f4579ea">
+        <DataType>Integer</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="11bed4ea-c0a3-4a07-807b-0650cfd0273e">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>FiscalYearValue</ColumnID>
+        </Source>
+      </ValueColumn>
+      <AttributeHierarchyDisplayFolder>Fiscal</AttributeHierarchyDisplayFolder>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="badf58bb-b560-4a88-b9f8-2259df6331e1">
+      <ID>Fiscal Semester</ID>
+      <Name>Fiscal Semester</Name>
+      <Type>FiscalHalfYears</Type>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0b621416-9ccf-42aa-bd08-0cd7e937d9b2">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="70ebfa9c-a35b-4b77-9f99-e281c08033de">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>FiscalYear</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="59ca74d6-796d-416f-8fd7-0ee0874286f7">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a0b40fc6-bf4c-41b4-bcef-a953e77738ee">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>FiscalSemester</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="14c29d7e-4f07-441f-836b-772e14fa9b89">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b2805bca-b67a-4c60-81cc-c76ab47020bd">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>FiscalSemesterDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="72d508fb-03da-473b-ad0b-a1fea3569574">
+          <AttributeID>Fiscal Year</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Fiscal Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3fe1e38c-a068-45e8-b8bc-4e4ea0657cee">
+          <AttributeID>Fiscal Semester Of Year</AttributeID>
+          <Name>Fiscal Semester Of Year</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Fiscal</AttributeHierarchyDisplayFolder>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="2776c786-358d-4ea3-b816-2e851a55dcc0">
+      <ID>Fiscal Semester Of Year</ID>
+      <Name>Fiscal Semester Of Year</Name>
+      <Type>FiscalHalfYearOfYear</Type>
+      <EstimatedCount>2</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ddccb3f1-ecd3-4ad9-8eb9-4b8ce4487171">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3f92f7c8-ea20-4895-9c90-4bee06421a2c">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>FiscalSemesterOfYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyDisplayFolder>Fiscal</AttributeHierarchyDisplayFolder>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="03b1dfcf-96cb-4f78-9fb4-f43bf665b38f">
+      <ID>English Day Name Of Week</ID>
+      <Name>Day Name</Name>
+      <Type>Days</Type>
+      <EstimatedCount>8</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="09eab450-d0fc-4203-b453-e17a3ba36494">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="14bf512e-eab6-4dd4-977f-48c69926056d">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>DayNumberOfWeek</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="5c88bce1-91d9-49a1-b306-65a549a6a857">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="24a3845e-dec3-4a91-85dc-23565c778724">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>EnglishDayNameOfWeek</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="f555b084-bb3d-4372-b094-3eac2b014e51">
+        <DataType>UnsignedTinyInt</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="5fc5b8fb-f439-421c-a376-c68b36aa3231">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>DayNumberOfWeek</ColumnID>
+        </Source>
+      </ValueColumn>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="6b87c8f3-ffcc-43e5-8733-e8aa4da19998">
+      <ID>Month Name</ID>
+      <Name>Month Name</Name>
+      <Type>Months</Type>
+      <EstimatedCount>61</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="65fecab5-4bcb-4a9f-961c-31bb7ed80f32">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4eb74f54-379a-4dda-8f06-21cad34f318b">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>CalendarYear</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="8385c83c-63aa-4185-810e-2f4de011f58c">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="26c5ec2b-fcb7-4885-99db-f5221375988f">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>MonthNumberOfYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a5146844-ac8a-4344-be71-5f5e4c3da14e">
+        <DataType>WChar</DataType>
+        <DataSize>15</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="ab06774e-e1c5-4838-bdf2-06687a2722e3">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>MonthName</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="746b7857-e289-481e-ba43-66458f2b6868">
+          <AttributeID>Calendar Quarter</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Calendar Quarter</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8089a853-4bfb-4cc1-a998-618a9f2a18a2">
+          <AttributeID>Month Number Of Year</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Month of Year</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ValueColumn dwd:design-time-name="d022872c-4216-4567-80c6-8866904490b8">
+        <DataType>Date</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e16c8b81-4555-4404-85ec-cd4df2acee18">
+          <TableID>CubeCommon_Date</TableID>
+          <ColumnID>MonthNameValue</ColumnID>
+        </Source>
+      </ValueColumn>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="5394a60a-2a28-43db-a947-bb3cbc72e5ad">
+      <ID>Day Number Of Week</ID>
+      <Name>Day of Week</Name>
+      <Type>DayOfWeek</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="962d8192-115c-42cc-9857-82cba796224a">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a5652199-724e-4e8b-a2e2-5130194eccd2">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>DayNumberOfWeek</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Attribute>
+    <Attribute dwd:design-time-name="a7f56b0c-2d10-42a9-a02e-48ec89a9f975">
+      <ID>Day Number Of Year</ID>
+      <Name>Day of Year</Name>
+      <Type>DayOfYear</Type>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4fa59ef5-52b8-43c1-a658-1acb5e19d486">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5a08a332-22aa-4f38-9480-9f7e9f834679">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>DayNumberOfYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="c53bef35-40b5-4074-9ab7-8e0f58d96d55">
+      <ID>Date Calculations</ID>
+      <Name>Date Calculations</Name>
+      <EstimatedCount>1</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="50af0a4e-11c0-4150-a014-869de27719a4">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ea7bb1cc-7505-41ba-a8a8-4f899dfdeff6">
+            <TableID>CubeCommon_Date</TableID>
+            <ColumnID>Date_x0020_Calculations</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <DefaultMember></DefaultMember>
+      <IsAggregatable>false</IsAggregatable>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="f266385b-8656-41a5-a36d-63d07661523b">
+      <ID>Hierarchy</ID>
+      <Name>Fiscal</Name>
+      <Levels>
+        <Level dwd:design-time-name="d7b7d7a8-8c52-4a9f-99fd-5942fc4cc2c2">
+          <ID>Fiscal Year</ID>
+          <Name>Fiscal Year</Name>
+          <SourceAttributeID>Fiscal Year</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="57a54152-94c6-4364-a107-4967692b56c8">
+          <ID>Fiscal Semester</ID>
+          <Name>Fiscal Semester</Name>
+          <SourceAttributeID>Fiscal Semester</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="5f798478-f73b-489d-88f1-365a0a88c6ab">
+          <ID>Fiscal Quarter</ID>
+          <Name>Fiscal Quarter</Name>
+          <SourceAttributeID>Fiscal Quarter</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="84141f32-8fbf-47d8-8727-1500b981c1e3">
+          <ID>Month Name</ID>
+          <Name>Month</Name>
+          <SourceAttributeID>Month Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="b6a4c85c-6e0d-4a4c-b508-e32f99468d2c">
+          <ID>Date</ID>
+          <Name>Date</Name>
+          <SourceAttributeID>Date</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="22260414-f184-4e8c-a3c5-993f612b81cb">
+      <ID>Hierarchy 1</ID>
+      <Name>Calendar</Name>
+      <Levels>
+        <Level dwd:design-time-name="f3a51d6d-6e89-44d2-8c11-c73093130d5b">
+          <ID>Calendar Year</ID>
+          <Name>Calendar Year</Name>
+          <SourceAttributeID>Calendar Year</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="2789e289-5f15-4aab-9740-b188358f40db">
+          <ID>Calendar Semester</ID>
+          <Name>Calendar Semester</Name>
+          <SourceAttributeID>Calendar Semester</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="c0e1b6ce-751d-4c11-88c6-2597bc6a9ee3">
+          <ID>Calendar Quarter</ID>
+          <Name>Calendar Quarter</Name>
+          <SourceAttributeID>Calendar Quarter</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="70b5623b-7e58-437a-b86a-5197dd1beca3">
+          <ID>Month Name</ID>
+          <Name>Month</Name>
+          <SourceAttributeID>Month Name</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="6cd960ab-3534-4093-b117-3f5690a68958">
+          <ID>Date</ID>
+          <Name>Date</Name>
+          <SourceAttributeID>Date</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+</Dimension>

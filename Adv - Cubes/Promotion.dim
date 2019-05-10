@@ -1,0 +1,329 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="52471bf8-a597-40cd-87af-5962b8d4c4c3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Promotion</ID>
+  <Name>Promotion</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4531" scrolltop="-15372" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="34766" y="35745" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.1" tooltip="Promotion (CubeSales.Promotion)" left="-3816" top="-14975" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4577" height="9947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000e1110000db260000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="CubeSales_Promotion" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4531</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-15372</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-3816</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-14975</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="fac83be2-c9ba-4405-8ef1-f3dca66773f0">
+    <DataSourceViewID>Adv DM</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="05e457f2-01fc-4240-b018-2404ae433d7d">
+      <ID>Promotion</ID>
+      <Name>Promotion</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>17</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5a5d68a3-4af9-4544-8f05-863f35b0e51e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7441443b-9c9c-49c4-9699-5376a00bbfca">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>ID_Promotion</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8d729f0d-80ca-46b7-afe2-5d9b3627b939">
+        <DataType>WChar</DataType>
+        <DataSize>255</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d982d06d-d3c0-4ebf-ac89-a3ddeada3461">
+          <TableID>CubeSales_Promotion</TableID>
+          <ColumnID>EnglishPromotion</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="71ea9123-25a7-452a-b438-d087af1b03f7">
+          <AttributeID>Max Quantity</AttributeID>
+          <Name>Max Quantity</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="305dc319-cc8f-42bc-94e3-4c8f29ddcc09">
+          <AttributeID>Min Quantity</AttributeID>
+          <Name>Min Quantity</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="74b229a3-8f9e-431e-9c09-ee5ffc9ac0c8">
+          <AttributeID>Discount Percent</AttributeID>
+          <Name>Discount Percent</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0eab6c59-f98b-41c2-b342-6ed412a7f9b3">
+          <AttributeID>Start Date</AttributeID>
+          <Name>Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="842f5208-7074-4e1f-8f46-f087699579b4">
+          <AttributeID>End Date</AttributeID>
+          <Name>End Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="de897331-91cf-4fd9-8f70-583d43acc544">
+          <AttributeID>English Promotion Type 1</AttributeID>
+          <Name>Promotion Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="09550d39-5591-4c46-b717-2fecbf7f649e">
+          <AttributeID>English Promotion Type</AttributeID>
+          <Name>Type and Category</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="3948a05c-b53d-4ad7-9cbf-96432e5df45d">
+      <ID>Max Quantity</ID>
+      <Name>Max Quantity</Name>
+      <EstimatedCount>5</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="78df6c69-7524-4035-8e78-b4cfee77c005">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9e6ea82b-1c43-4b8a-a6ac-5c26ba2e6156">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>MaxQuantity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a7663ebb-75b8-49b0-8ac3-8bbd8992a9d8">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="32ef6559-8012-4d73-ba80-3d3c6ad95861">
+          <TableID>CubeSales_Promotion</TableID>
+          <ColumnID>MaxQuantityDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="1971102f-f929-4cd3-98f6-b879b92f9e85">
+      <ID>Min Quantity</ID>
+      <Name>Min Quantity</Name>
+      <EstimatedCount>7</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="92b1ad72-314e-4c70-bb8f-3b3be196868f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bc4c59e1-e45e-466c-9931-804ff43c1c6e">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>MinQuantity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1ef8ea5c-ef62-46ff-bcca-f51a8150d90a">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c1f3126b-4765-49e1-8585-333e132ca628">
+          <TableID>CubeSales_Promotion</TableID>
+          <ColumnID>MinQuantityDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="ae46298c-b056-4890-99c9-22252aad855d">
+      <ID>English Promotion Type</ID>
+      <Name>Type and Category</Name>
+      <EstimatedCount>7</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="92ac0cc9-f934-4ab8-a844-df654badb0dd">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="79e1d7fd-0d18-46b1-89a2-df11b021ea49">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>EnglishPromotionType</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="92f32488-5db9-43c1-9445-248b07d54646">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6ec07f0d-3ec1-4677-8b2f-e1b88dbdcdf5">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>EnglishPromotionCategory</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c82dd9de-32e8-4e5f-b0fd-0e5164de741c">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b6c79184-97ee-4eb6-a27b-14918866e973">
+          <TableID>CubeSales_Promotion</TableID>
+          <ColumnID>EnglishPromotionType</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="3fa45745-fca2-487c-b04c-10fcbd9de77c">
+          <AttributeID>English Promotion Category</AttributeID>
+          <Name>Promotion Category</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="02be2c45-03f1-4cf8-987e-ceb37e1bab1c">
+      <ID>English Promotion Category</ID>
+      <Name>Promotion Category</Name>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="18d202b7-3a09-4306-adac-fe5419dbfc42">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="73b980ef-ec1d-4ec3-843f-7414a106f9a7">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>EnglishPromotionCategory</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="0b9a38af-0554-4876-b196-e1ef8318081c">
+      <ID>Discount Percent</ID>
+      <Name>Discount Percent</Name>
+      <EstimatedCount>10</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fc29cded-266e-47b8-9695-17621860756d">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eba6c35d-6bf2-428a-8820-51a3412e3e34">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>DiscountPercent</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="5e1d8939-b34c-4f0d-adbb-251782a8cfce">
+      <ID>Start Date</ID>
+      <Name>Start Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6b264985-f9f3-43fe-aa15-5a7deb82b30c">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9dc053c5-16d4-4043-912b-277b6857f321">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>StartDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="9412ea56-c38c-488e-9d98-eff04672080a">
+        <DataType>WChar</DataType>
+        <DataSize>93</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="de0b13d4-c1e7-4ce5-a9b4-af5fb8f22583">
+          <TableID>CubeSales_Promotion</TableID>
+          <ColumnID>StartDateDesc</ColumnID>
+        </Source>
+      </NameColumn>
+    </Attribute>
+    <Attribute dwd:design-time-name="ac1093cc-cd3f-4d9e-a769-47a14733ed8b">
+      <ID>End Date</ID>
+      <Name>End Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cf0afcb7-08ca-4e49-ac20-03da88197d42">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5c2ad9b5-b4dc-4a64-ba16-3531b0e9d345">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>EndDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1f10c1f9-07cb-4099-837d-73e8bc0aadbb">
+        <DataType>WChar</DataType>
+        <DataSize>93</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="4c8906e4-eb5b-43b3-81e6-5c28c632ebae">
+          <TableID>CubeSales_Promotion</TableID>
+          <ColumnID>EndDateDesc</ColumnID>
+        </Source>
+      </NameColumn>
+    </Attribute>
+    <Attribute dwd:design-time-name="80ff8558-51de-4818-9cb6-30c37cea113d">
+      <ID>English Promotion Type 1</ID>
+      <Name>Promotion Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5d14bc8f-f175-4ec7-9fec-ffb1f60c537f">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d7ea1512-30b0-4f99-8f86-759523fd5e12">
+            <TableID>CubeSales_Promotion</TableID>
+            <ColumnID>EnglishPromotionType</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="59e76545-75ec-447f-94b0-aa8f17b556c1">
+      <ID>Hierarchy</ID>
+      <Name>Promotions</Name>
+      <Levels>
+        <Level dwd:design-time-name="591f0872-a35c-4094-86b7-0d9ba72ef647">
+          <ID>Promotion Category</ID>
+          <Name>Category</Name>
+          <SourceAttributeID>English Promotion Category</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="e391e1e0-1b4c-472d-b692-8285fac871c7">
+          <ID>Type and Category</ID>
+          <Name>Type</Name>
+          <SourceAttributeID>English Promotion Type</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="349d7780-4d08-41a2-bebd-be276cd238e9">
+          <ID>Promotion</ID>
+          <Name>Promotion</Name>
+          <SourceAttributeID>Promotion</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+</Dimension>

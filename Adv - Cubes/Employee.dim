@@ -1,0 +1,553 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f7f03712-2248-4807-887a-3a0735ecea73" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Employee</ID>
+  <Name>Employee</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4610" scrolltop="-15372" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8625" y="17489" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Employee" left="-3843" top="-14922" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="4419" height="13361" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000800004311000031340000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="CubeSales_Employee" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4610</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-15372</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-3843</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-14922</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="b96e3cd3-4e0c-43b1-a219-53ac237a9b4d">
+    <DataSourceViewID>Adv DM</DataSourceViewID>
+  </Source>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <DimensionPermissions>
+    <DimensionPermission dwd:design-time-name="d69e1310-355b-4d41-ad62-f21768f0f809">
+      <ID>DimensionPermission 1</ID>
+      <Name>DimensionPermission 1</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <RoleID>Dimension Security - Parent Child</RoleID>
+      <Read>Allowed</Read>
+      <AttributePermissions>
+        <AttributePermission dwd:design-time-name="b965b021-cc91-4868-a278-81526b8a82b5">
+          <AttributeID>ID Parent Employee</AttributeID>
+          <AllowedSet>Generate (
+NonEmpty (
+[Employee].[Employee] .[Employee].Members,
+(
+[Measures].[Employee Count],
+StrToMember ('[Users].[User].[' + UserName () + ']')
+)
+), {
+LinkMember (
+Employee.Employee.CurrentMember,
+Employee.Employees
+)
+}
+)</AllowedSet>
+          <VisualTotals>1</VisualTotals>
+        </AttributePermission>
+      </AttributePermissions>
+    </DimensionPermission>
+  </DimensionPermissions>
+  <Attributes>
+    <Attribute dwd:design-time-name="ca9e04c2-ebd7-4750-a8bb-766a263c8253">
+      <ID>Employee</ID>
+      <Name>Employee</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>318</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c29decc3-6196-4ac1-b417-30980d365c0d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c475541b-4543-46a5-900a-0aef2439044a">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>ID_Employee</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8b9cd3de-f413-40cb-8bdf-62475b1863f2">
+        <DataType>WChar</DataType>
+        <DataSize>153</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="9b153ff9-154c-49bb-9beb-a218f4547311">
+          <TableID>CubeSales_Employee</TableID>
+          <ColumnID>Employee</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="bbf73607-a6c0-40a0-a17c-b169ac980612">
+          <AttributeID>ID Parent Employee</AttributeID>
+          <Name>Employees</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="66747ddb-1c24-45e2-a3c6-5a3d1352beac">
+          <AttributeID>Birth Date</AttributeID>
+          <Name>Birth Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a62057e7-9525-4c91-b84a-d2100c52f771">
+          <AttributeID>Department Name</AttributeID>
+          <Name>Department Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2311b808-047d-437a-b626-948c0168567e">
+          <AttributeID>Email Address</AttributeID>
+          <Name>Email Address</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7af9f1c8-28a1-4090-afd0-cbb2e42b0f64">
+          <AttributeID>Emergency Contact Name</AttributeID>
+          <Name>Emergency Contact Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4d43ff25-8d80-44f8-bb0d-ea06ed9938df">
+          <AttributeID>Emergency Contact Phone</AttributeID>
+          <Name>Emergency Contact Phone</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="fce0a6d6-8c0d-4eed-b3f2-82b6b506f639">
+          <AttributeID>Gender</AttributeID>
+          <Name>Gender</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ffd03d82-2198-4f3e-8a6d-da5667e62a8a">
+          <AttributeID>Hire Date</AttributeID>
+          <Name>Hire Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e64bbc81-c3e1-4b1e-8087-5e710c211651">
+          <AttributeID>Hire Year</AttributeID>
+          <Name>Hire Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="608ffd8d-a093-45c5-8b76-442722122e60">
+          <AttributeID>Base Rate</AttributeID>
+          <Name>Base Rate</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="45e1a7a2-7acb-4919-8498-d22515ee7f83">
+          <AttributeID>Marital Status</AttributeID>
+          <Name>Marital Status</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="bff032da-5036-4729-a96d-5fe391f0dc44">
+          <AttributeID>Pay Frequency</AttributeID>
+          <Name>Pay Frequency</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ee09b15e-0fda-47be-b880-244ec8647e08">
+          <AttributeID>Phone</AttributeID>
+          <Name>Phone</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="70182332-0a75-4e5f-bc02-65ae8c10fea6">
+          <AttributeID>Salaried Flag</AttributeID>
+          <Name>Salaried Flag</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b957f5e9-ecdd-41e9-9a26-3c5f3baf0f4c">
+          <AttributeID>Sales Person Flag</AttributeID>
+          <Name>Sales Person Flag</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="13a23a28-dcd2-4022-afa9-1c27e938bd63">
+          <AttributeID>Title</AttributeID>
+          <Name>Title</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9f3026d6-47bf-42f9-b57f-c46d2c4eb860">
+          <AttributeID>Scd Date Start</AttributeID>
+          <Name>Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7bbf978a-94fa-4a23-8b91-95ad9998ade4">
+          <AttributeID>Scd Date End</AttributeID>
+          <Name>End Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b98663ed-122a-4b54-a6c6-13b4587c9802">
+          <AttributeID>Scd Status</AttributeID>
+          <Name>Status</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="618d48f6-272f-4608-90b9-dbc9c305bb62">
+      <ID>ID Parent Employee</ID>
+      <Name>Employees</Name>
+      <Usage>Parent</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9c9cf981-356f-40c0-89a1-ed1748803fed">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f6c85b4c-438f-469e-851a-1dcb25f13b1e">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>ID_ParentEmployee</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="1a84a839-511b-4a64-857a-0d568a24af4f">
+        <DataType>WChar</DataType>
+        <DataSize>153</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="dc445287-337d-4142-b9b9-c2d9843f4b57">
+          <TableID>CubeSales_Employee</TableID>
+          <ColumnID>Employee</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <NamingTemplate>CEO;Director;Employee;</NamingTemplate>
+    </Attribute>
+    <Attribute dwd:design-time-name="12b29feb-fe62-4071-b228-b7df1937de1a">
+      <ID>Birth Date</ID>
+      <Name>Birth Date</Name>
+      <EstimatedCount>280</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7afc0b15-6408-4283-8477-ace6748e09fc">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b0b393d7-3ee2-4971-9cf5-2b409615882e">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>BirthDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="de5ab0ca-c735-49b7-ac8a-50c327bf5030">
+      <ID>Department Name</ID>
+      <Name>Department Name</Name>
+      <EstimatedCount>17</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a67e6ca3-e2ff-481a-811e-99c896d4808d">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="99bae5eb-2248-4760-b605-01725efec0ed">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>DepartmentName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="51a6a8ea-f650-43e1-bcc2-c0072ee23272">
+      <ID>Email Address</ID>
+      <Name>Email Address</Name>
+      <EstimatedCount>291</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f4bcad2d-bfce-4139-a64f-c0f78d353bfa">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="57b21b2a-caf8-45c6-8b24-0d4a2f3da899">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>EmailAddress</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="f51a78c5-56a6-454c-bc5e-441369f47e59">
+      <ID>Emergency Contact Name</ID>
+      <Name>Emergency Contact Name</Name>
+      <EstimatedCount>291</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e59c30c7-2b5e-47b2-876d-132fb2cd4b38">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e0336ebb-a0f3-41e7-aca1-c98ccb7aae29">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>EmergencyContactName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="b778bab6-83f1-47a8-a851-b903b83d6baa">
+      <ID>Emergency Contact Phone</ID>
+      <Name>Emergency Contact Phone</Name>
+      <EstimatedCount>289</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1b691801-316c-43e7-8475-376c53e225dd">
+          <DataType>WChar</DataType>
+          <DataSize>25</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ed14aa94-189f-46c8-834f-3756d27846ea">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>EmergencyContactPhone</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="7abb29a2-5820-4ddc-a01f-65f7caccad45">
+      <ID>Gender</ID>
+      <Name>Gender</Name>
+      <EstimatedCount>3</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="58b39174-3524-4473-9159-aa266736af6b">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b57b5ead-1088-445b-9003-7ed7f80cfa73">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>Gender</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="25320222-286a-4ce4-be26-1328bb1b9b33">
+      <ID>Hire Date</ID>
+      <Name>Hire Date</Name>
+      <EstimatedCount>165</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="54f23249-9ba8-4546-b121-207fb1d97b8e">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b300f1dc-9ed1-4a09-a0fd-8cf914dc4993">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>HireDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="823976d3-4e23-43e7-98fa-04b77e1aa6d1">
+      <ID>Hire Year</ID>
+      <Name>Hire Year</Name>
+      <EstimatedCount>9</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d8aedcfc-df7c-4e9c-84ea-5770a6df0d8f">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e2959b33-15bb-4ac4-9d0a-c7ab6dd47aa6">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>HireYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="02b38273-1355-4183-96ad-965e7960dd44">
+      <ID>Base Rate</ID>
+      <Name>Base Rate</Name>
+      <EstimatedCount>67</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="79763c29-d37a-4e60-b97f-f4bf8d2fcf9e">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e15768d5-59a3-44b4-8810-6100bff2bc59">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>BaseRate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <DiscretizationMethod>Automatic</DiscretizationMethod>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="b80df428-183a-421d-aa09-e40f0bbcd237">
+      <ID>Marital Status</ID>
+      <Name>Marital Status</Name>
+      <EstimatedCount>3</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ab62ffc1-cace-4373-bfc6-8656f5512620">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b2044cf2-51d1-4838-8ac6-f7ab91a345b4">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>MaritalStatus</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="117b13d1-41f9-433c-8c92-90610d303626">
+      <ID>Pay Frequency</ID>
+      <Name>Pay Frequency</Name>
+      <EstimatedCount>3</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ed42d09a-e844-40f6-96d2-29017a39171a">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6f24745d-14b9-4ab5-917e-486153715a2e">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>PayFrequency</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="1c233c2d-1cbe-435a-a4c4-8a1710ab9fbd">
+      <ID>Phone</ID>
+      <Name>Phone</Name>
+      <EstimatedCount>289</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="29b441c8-9fc4-4047-b8d7-8c0328ee38f4">
+          <DataType>WChar</DataType>
+          <DataSize>25</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9580b635-26dc-4304-bd55-970adc8f026d">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>Phone</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="19f09076-e2e3-4591-ad26-f5364e30b6b0">
+      <ID>Salaried Flag</ID>
+      <Name>Salaried Flag</Name>
+      <EstimatedCount>3</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cba00b4c-271e-4cce-adb0-291efaf0e9e4">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="03f94f1b-539c-4e8c-8169-f7f124f658b3">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>SalariedFlag</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="7b35458d-e4f1-4a14-9aee-4bf11925000a">
+      <ID>Sales Person Flag</ID>
+      <Name>Sales Person Flag</Name>
+      <EstimatedCount>3</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="908ce0c4-00fc-4658-a768-58f56973a8fc">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e93d64a2-04d4-43ae-9698-9b64f0c80bd1">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>SalesPersonFlag</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="c8827289-f055-46b2-9775-1691d5aeae5a">
+      <ID>Title</ID>
+      <Name>Title</Name>
+      <EstimatedCount>68</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ac8c84d2-a844-44dc-9d70-cacaac50488e">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="57392130-93f4-4288-846a-ddd621cf8d4b">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>Title</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="4c6972ed-491b-44d8-9ee9-edab5103d816">
+      <ID>Scd Date Start</ID>
+      <Name>Start Date</Name>
+      <Type>ScdStartDate</Type>
+      <EstimatedCount>178</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2f23dd45-e19b-41b2-a076-cbda7980fe5b">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e14b6c72-7b03-4f51-9ba4-63618c9b3b65">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>ScdDateStart</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c4e1de0b-2622-4d90-b943-bce35c6c919a">
+        <DataType>WChar</DataType>
+        <DataSize>93</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="e2bf5d9b-dda1-497f-963f-27cff3650390">
+          <TableID>CubeSales_Employee</TableID>
+          <ColumnID>ScdDateStartDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="43923757-2821-4b9c-bda2-b886a98a4ac4">
+      <ID>Scd Date End</ID>
+      <Name>End Date</Name>
+      <Type>ScdEndDate</Type>
+      <EstimatedCount>14</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6cf32055-a319-4bb3-b765-b8cc47cbc213">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="19fef0cd-abf0-44aa-9e87-f8e7ae72ea1b">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>ScdDateEnd</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8a267faa-8950-4fcf-a790-390f0aa4c809">
+        <DataType>WChar</DataType>
+        <DataSize>93</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="d57bbcf5-85b6-4f39-afe6-141938e4e7a0">
+          <TableID>CubeSales_Employee</TableID>
+          <ColumnID>ScdDateEndDesc</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="bb5f1b69-a232-482c-938f-83f92e8b29f6">
+      <ID>Scd Status</ID>
+      <Name>Status</Name>
+      <Type>ScdStatus</Type>
+      <EstimatedCount>2</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4e42079e-0d5d-4b14-b2a7-bb4d5b85089b">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0da6c084-df09-49f0-b037-94bb1a62aa38">
+            <TableID>CubeSales_Employee</TableID>
+            <ColumnID>ScdStatus</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+  </Attributes>
+</Dimension>

@@ -1,0 +1,1661 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/20/2009 11:28:31 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="HARRY"
+  DTS:CreatorName="NOEMANET\Alberto"
+  DTS:DTSID="{A6E26B11-4B8D-4E88-A833-3642DE3B6AD4}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.3373.0"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="Adv DM Partitioning"
+  DTS:PackageType="5"
+  DTS:VersionBuild="122"
+  DTS:VersionGUID="{566570BB-C1E4-4B5A-A595-105AF168FECC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Adv DM]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FB9DADFC-449C-45DE-925A-13A3715A523C}"
+      DTS:ObjectName="Adv DM">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Adv_DM;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{FB9DADFC-449C-45DE-925A-13A3715A523C}Voldemort\SQL2005.Adv_DM;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SSAS - Adv]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{9D54746F-ECBC-45E9-B51E-192A60618C76}"
+      DTS:ObjectName="SSAS - Adv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Adv Works - DW;Provider=MSOLAP.5;Integrated Security=SSPI;Impersonation Level=Impersonate;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cube Partitioning"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{55961DFC-D1AF-4A2B-B325-93BC8A4D8A37}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cube Partitioning">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{2B2417A6-FFEC-4B2A-AC92-103C0A6C6E6D}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="RelationalPartitions">
+          <DTS:VariableValue
+            DTS:DataSubType="ManagedSerializable"
+            DTS:DataType="13">
+            <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+              <SOAP-ENV:Body>
+                <xsd:anyType
+                  id="ref-1"></xsd:anyType>
+              </SOAP-ENV:Body>
+            </SOAP-ENV:Envelope>
+          </DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Cube Partitioning\Get Relational Partitions"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{185C6EB7-93A5-48B4-9268-E8862B9FD2D9}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get Relational Partitions"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FB9DADFC-449C-45DE-925A-13A3715A523C}"
+              SQLTask:SqlStatementSource="SELECT DISTINCT&#xA;    OrderYearMonth = FLOOR (ID_DateOrder / 100)&#xA;FROM&#xA;    CubeSales.Sales&#xA;ORDER BY&#xA;    FLOOR (ID_DateOrder / 100)"
+              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::RelationalPartitions" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Cube Partitioning\Update  SSAS Partitions"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Script Task"
+          DTS:DTSID="{B0C051EB-839A-4F47-B16B-3E3843FACA17}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update  SSAS Partitions"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_638770be22ef401b97384cde33747090"
+              VSTAMajorVersion="3"
+              VSTAMinorVersion="0"
+              Language="CSharp"
+              ReadOnlyVariables="RelationalPartitions">
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Resources.resx"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+              <ProjectItem
+                Name="ScriptMain.cs"
+                Encoding="UTF8"><![CDATA[/*
+   Demonstration of a script task used to manage partitions
+   for an SSAS cube.
+   
+   2009 - Alberto Ferrari -   
+  
+*/
+
+using System;
+using System.Data;
+using System.Data.Common;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.Collections.Generic;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+using Microsoft.AnalysisServices;
+using System.Text;
+
+namespace ST_638770be22ef401b97384cde33747090.csproj {
+    [Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+    public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase {
+
+        #region VSTA generated code
+        enum ScriptResults {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+        /// <summary>
+        /// 
+        /// Shows a message in the output window, useful for debugging purposes.
+        /// 
+        /// We make this function Static, accessing the Dts object using a static variable
+        /// that is assigned during the first steps in the Main function
+        /// 
+        /// </summary>
+        /// <param name="msg"></param>
+        public static void DebugMessage(string msg) {
+            bool fireAgain = false;
+            RunningDts.Events.FireInformation(1, "", msg, "", 0, ref fireAgain);
+        }
+        static Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptObjectModel RunningDts = null;
+
+        /// <summary>
+        /// 
+        /// This class holds the parameters used to partition the SSAS measure group
+        /// In the demo it is static, in a real world situation its content should
+        /// be loaded by a proper query to a relational table holding all these
+        /// parameters.
+        /// Please note that all parameters are relative to time
+        /// 
+        /// </summary>
+        public static class Parameters {
+            public static int MaxNumberOfMonths = 36;
+            public static int NumberOfMonthsPartitionedByMonth = 12;
+            public static string AnnotationNameForPartitionsInside = "MonthsInsidePartition";
+            public static string AnnotationNameForPartitionType = "PartitionType";
+            public static string FactTableName = "CubeSales.Sales";
+            public static string FactTablePartitionColumn = "OrderYearMonth";
+            public static string AnalysisServicesConnection = "SSAS - Adv";
+            public static string AnalysisServicesCubeName = "Sales";
+            public static string AnalysisServicesMeasureGroupName = "Sales";
+
+        }
+
+        /// <summary>
+        /// 
+        /// This class holds a relational partition.
+        /// 
+        /// On the relational database all partitioning is made at the month level, as
+        /// it is easier to manage the deletion of old partitions. Moreover, in this demo
+        /// we want to show what need to be done when the relational partition schema is
+        /// different from the SSAS one, where partitioning is done at the Month and Year
+        /// level, depending on the age of the data.
+        /// 
+        /// It implements IComparable in order to sort the list by YearMonth.
+        /// 
+        /// </summary>
+        public class RelationalPartition : IComparable {
+            public int YearMonth;                   // Partition Year/Month, represented as an integer
+            public string PartitionColumnName;      // Partition Column Name
+            public string TableName;                // The name of the table
+
+            /// <summary>
+            /// 
+            /// Constructor for the RelationalPartition class
+            /// 
+            /// </summary>
+            public RelationalPartition(string tableName, string partitionColumnName, int yearMonth) {
+                this.TableName = tableName;
+                this.PartitionColumnName = partitionColumnName;
+                this.YearMonth = yearMonth;
+            }
+
+            /// <summary>
+            /// 
+            /// Returns the SELECT query needed to gather the information about the partition
+            /// 
+            /// </summary>
+            /// <returns></returns>
+            public string RelationalQuery () {
+                return String.Format("SELECT * FROM {0} WHERE {1}={2} ", TableName, PartitionColumnName, YearMonth);
+            }
+
+            /// <summary>
+            /// 
+            /// Used to sort the list by YearMonth
+            /// 
+            /// </summary>
+            /// <param name="obj"></param>
+            /// <returns></returns>
+            public int CompareTo(object obj) {
+                return this.YearMonth.CompareTo(((RelationalPartition)obj).YearMonth);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// This class holds the list of all the relational partitions available in the relational DB
+        /// 
+        /// It has a specific method (LoadFrom) that loads the list of available partitions
+        /// from an SSIS variable.
+        /// 
+        /// It also holds the min and max of the read values
+        /// 
+        /// </summary>
+        public class RelationalPartitionList : List<RelationalPartition> {
+            public int FirstYearMonth = int.MaxValue;   // Holds the first YearMonth loaded from the relational store
+            public int LastYearMonth = int.MinValue;    // Holds the last YearMonth loaded from the relational store
+
+            /// <summary>
+            /// 
+            /// Loads the list of available partitions from the relational database.
+            /// 
+            /// It receives an object as a parameter. This object is the OleDB dataset produced
+            /// by the SELECT and stored in an SSIS variable of type Object.
+            /// 
+            /// </summary>
+            /// <param name="o"></param>
+            public void LoadFrom (Object ssisVariable) {
+                DataTable dataTable = new DataTable();
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
+
+                dataAdapter.Fill(dataTable, ssisVariable);
+                foreach (DataRow dataRow in dataTable.Rows) {
+                    int CurrentYearMonth = (int) dataRow[Parameters.FactTablePartitionColumn];
+
+                    this.Add(new RelationalPartition(Parameters.FactTableName, Parameters.FactTablePartitionColumn, CurrentYearMonth));
+
+                    //
+                    //  Check if the current value should replace MIN or MAX
+                    //
+                    if (CurrentYearMonth < FirstYearMonth) {
+                        FirstYearMonth = CurrentYearMonth;
+                    }
+                    if (CurrentYearMonth > LastYearMonth) {
+                        LastYearMonth = CurrentYearMonth;
+                    }
+                }
+                this.Sort();
+            }
+
+            /// <summary>
+            /// 
+            /// Search a relational partition given the YearMonth.
+            /// 
+            /// Returns NULL if no partition is found
+            /// 
+            /// </summary>
+            /// <param name="yearMonth"></param>
+            /// <returns></returns>
+            public RelationalPartition GetByYearMonth(int yearMonth) {
+                foreach (RelationalPartition p in this) {
+                    if (p.YearMonth == yearMonth) {
+                        return p;
+                    }
+                }
+                return null;
+            }
+        }
+
+        public static RelationalPartitionList RelationalPartitions = new RelationalPartitionList();
+
+        /// <summary>
+        /// 
+        /// This class holds an Analysis Services measure group and provides the real connectivity
+        /// with the SSAS cube
+        /// 
+        /// </summary>
+        public class AnalysisServicesMeasureGroup {
+            public string ConnectionString;
+            public string DataBaseName;
+            public string CubeName;
+            public string MeasureGroupName;
+
+            public Server server;
+            public Database database;
+            private Cube cube;
+            public MeasureGroup PhysicalMeasureGroup;
+            public AnalysisServicesPartitionList ExistingPartitions = new AnalysisServicesPartitionList();
+            public AnalysisServicesPartitionList NewPartitions = new AnalysisServicesPartitionList();
+            public Partition MasterPartition;
+
+            /// <summary>
+            /// 
+            /// Connects to the server and opens the measure group, reading all the partitions
+            /// and detecting, from the annotation, which relational partitions belongs to which
+            /// SSAS partition
+            /// 
+            /// </summary>
+            /// <returns></returns>
+            public bool Connect() {
+                server = new Server();
+                server.Connect(ConnectionString);
+                database = server.Databases.GetByName(DataBaseName);
+                cube = database.Cubes.GetByName(CubeName);
+                PhysicalMeasureGroup = cube.MeasureGroups.GetByName(MeasureGroupName);
+
+                //
+                //  We iterate over all partitions and load the proper ones into
+                //  the list of already available partitions for the measure
+                //  group.
+                //
+                //  Please note that we avoid loading the partition whose name
+                //  is identical to the measure group name, as this is the master
+                //  partition and should not be considered as a valid partitions
+                //  in our model.
+                //
+                for (int i = 0; i < PhysicalMeasureGroup.Partitions.Count; i++) {
+                    Partition p = PhysicalMeasureGroup.Partitions[i];
+                    if (p.Name != PhysicalMeasureGroup.Name) {
+                        ExistingPartitions.Add(new AnalysisServicesPartition(this, p));
+                    } else {
+                        MasterPartition = p;
+                    }
+                }
+                return true;
+            }
+
+            /// <summary>
+            /// 
+            /// Disconnects from the server
+            /// 
+            /// </summary>
+            public void Disconnect () {
+                server.Disconnect();
+            }
+
+            public void SaveChanges() {
+                PhysicalMeasureGroup.Update();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// This class holds an AnalysisServices partition
+        /// 
+        /// </summary>
+        public class AnalysisServicesPartition {
+            public enum PartitionKind { Year, Month };
+
+            public PartitionKind Kind;
+            public AnalysisServicesMeasureGroup MeasureGroup;
+            public Partition PhysicalPartition;
+            public List<RelationalPartition> RelationalPartitionsInside = new List<RelationalPartition>();
+
+            /// <summary>
+            /// 
+            /// Constructor for the partition, when the partition is already present in the cube
+            /// 
+            /// We load from the annotation the list of monthly partitions already present in the
+            /// SSAS partition
+            /// 
+            /// </summary>
+            public AnalysisServicesPartition (AnalysisServicesMeasureGroup mg, Partition p) {
+                this.MeasureGroup = mg;
+                PhysicalPartition = p;
+                string annotation = p.Annotations.GetText (Parameters.AnnotationNameForPartitionsInside);
+                for (int i = 0; i < annotation.Length; i += 6) {
+                    int yearMonth = Convert.ToInt32(annotation.Substring(i, 6));
+                    RelationalPartition relationalPartition = RelationalPartitions.GetByYearMonth(yearMonth);
+                    if (relationalPartition != null) {
+                        RelationalPartitionsInside.Add (relationalPartition);
+                    } else {
+                        RelationalPartitionsInside.Add(new RelationalPartition (Parameters.FactTableName, Parameters.FactTablePartitionColumn, yearMonth));
+                    }
+                }
+                switch (p.Annotations.GetText (Parameters.AnnotationNameForPartitionType)) {
+                    case "MONTH" : 
+                        this.Kind = PartitionKind.Month;
+                        break;
+                    case "YEAR" :
+                        this.Kind = PartitionKind.Year;
+                        break;
+                }
+            }
+
+            /// <summary>
+            /// 
+            /// Constructor for the partition, when the partition is a newly created one
+            /// 
+            /// We receive the relational partition that will be hosted inside the SSAS
+            /// partition.
+            /// 
+            /// </summary>
+            public AnalysisServicesPartition(AnalysisServicesMeasureGroup mg, RelationalPartition r, PartitionKind kind) {
+                this.MeasureGroup = mg;
+                this.Kind = kind;
+                RelationalPartitionsInside.Add(r);
+            }
+
+            /// <summary>
+            /// 
+            /// Adds a relational partition to the Analysis Services Partition
+            /// 
+            /// </summary>
+            /// <param name="p"></param>
+            public void AddRelationalPartition(RelationalPartition p) {
+                RelationalPartitionsInside.Add(p);
+            }
+
+            /// <summary>
+            /// 
+            /// Returns True if the SSAS partition already contains the
+            /// relational partition passed as a parameter.
+            /// 
+            /// </summary>
+            /// <param name="p"></param>
+            /// <returns></returns>
+            public bool ContainsRelationalPartition(RelationalPartition p) {
+                foreach (RelationalPartition r in RelationalPartitionsInside) {
+                    if (r.YearMonth == p.YearMonth) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            /// <summary>
+            /// 
+            /// Returns True if the SSAS partition contains the yearMonth passed
+            /// as a parameter
+            /// 
+            /// </summary>
+            /// <param name="yearMonth"></param>
+            /// <returns></returns>
+            public bool ContainsYearMonth(int yearMonth) {
+                foreach (RelationalPartition r in RelationalPartitionsInside) {
+                    if (r.YearMonth == yearMonth) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            /// <summary>
+            /// 
+            /// Returns the relational query that will load the partition
+            /// 
+            /// It iterates over all its relational partitions and asks them
+            /// to get their query, then makes a UNION ALL of all the queries
+            /// 
+            /// </summary>
+            /// <returns></returns>
+            public string RelationalQuery() {
+                StringBuilder stringBuilder = new StringBuilder();
+
+                for (int i = 0; i < RelationalPartitionsInside.Count; i++) {
+                    stringBuilder.AppendLine(RelationalPartitionsInside[i].RelationalQuery ());
+                    if (i < RelationalPartitionsInside.Count - 1) {
+                        stringBuilder.AppendLine(" UNION ALL");
+                    }
+                }
+                return stringBuilder.ToString();
+            }
+
+            /// <summary>
+            /// 
+            /// Returns the name of the partition. The name changes based on the number of
+            /// months inside the partition. If it contains only one partition then it is
+            /// called with the name of the month, otherwise it is called with the name of
+            /// the year. The name is useful for humans only, indeed it is very useful. :)
+            /// 
+            /// </summary>
+            /// <returns></returns>
+            public string Name {
+                get {
+                    string result;
+
+                    if (this.Kind == PartitionKind.Month) {
+                        result = String.Format("{0} of Month {1}", MeasureGroup.MasterPartition.Name, RelationalPartitionsInside[0].YearMonth);
+                    } else {
+                        result = String.Format("{0} of Year {1}", MeasureGroup.MasterPartition.Name, (int)(RelationalPartitionsInside[0].YearMonth / 100));
+                    }
+                    return result;
+                }
+            }
+
+            /// <summary>
+            /// 
+            /// Save the changes to the physical SSAS partition
+            /// 
+            /// </summary>
+            public void SaveChanges() {
+                if (PhysicalPartition == null) {
+                    PhysicalPartition = MeasureGroup.MasterPartition.Clone();
+                    PhysicalPartition.Name = this.Name;
+                    PhysicalPartition.ID = this.Name;
+                    PhysicalPartition.Source = new QueryBinding (MeasureGroup.MasterPartition.DataSource.ID, RelationalQuery());
+                    string annotationString = "";
+                    foreach (RelationalPartition r in RelationalPartitionsInside) {
+                        annotationString += r.YearMonth.ToString();
+                    }
+                    PhysicalPartition.Annotations.Add(Parameters.AnnotationNameForPartitionsInside, annotationString);
+                    switch (this.Kind) {
+                        case PartitionKind.Year:
+                            PhysicalPartition.Annotations.Add(Parameters.AnnotationNameForPartitionType, "YEAR");
+                            PhysicalPartition.Slice = string.Format("[Date Order].[Calendar Year].&[{0}]", (int)(RelationalPartitionsInside[0].YearMonth / 100));
+                            break;
+                        case PartitionKind.Month:
+                            PhysicalPartition.Annotations.Add(Parameters.AnnotationNameForPartitionType, "MONTH");
+                            PhysicalPartition.Slice = string.Format("[Date Order].[Calendar].[Month].&[{0}]&[{1}]", (int)(RelationalPartitionsInside[0].YearMonth / 100), (int)(RelationalPartitionsInside[0].YearMonth % 100));
+                            break;
+                    }
+                    PhysicalPartition.State = AnalysisState.Unprocessed;
+                    MeasureGroup.PhysicalMeasureGroup.Partitions.Add(PhysicalPartition);
+                    PhysicalPartition.Update();
+                } else {
+                    PhysicalPartition.Name = this.Name;
+                    PhysicalPartition.ID = this.Name;
+                    PhysicalPartition.Source = new QueryBinding(MeasureGroup.MasterPartition.DataSource.ID, RelationalQuery());
+                    string annotationString = "";
+                    foreach (RelationalPartition r in RelationalPartitionsInside) {
+                        annotationString += r.YearMonth.ToString();
+                    }
+                    PhysicalPartition.Annotations.SetText (Parameters.AnnotationNameForPartitionsInside, annotationString);
+                    switch (this.Kind) {
+                        case PartitionKind.Year:
+                            PhysicalPartition.Annotations.SetText (Parameters.AnnotationNameForPartitionType, "YEAR");
+                            PhysicalPartition.Slice = string.Format("[Date Order].[Calendar Year].&[{0}]", (int)(RelationalPartitionsInside[0].YearMonth / 100));
+                            break;
+                        case PartitionKind.Month:
+                            PhysicalPartition.Annotations.SetText(Parameters.AnnotationNameForPartitionType, "MONTH");
+                            PhysicalPartition.Slice = string.Format("[Date Order].[Calendar].[Month].&[{0}]&[{1}]", (int)(RelationalPartitionsInside[0].YearMonth / 100), (int)(RelationalPartitionsInside[0].YearMonth % 100));
+                            break;
+                    }
+                    PhysicalPartition.Update();
+                }
+            }
+
+            /// <summary>
+            /// 
+            /// Deletes the partition from the measure group
+            /// 
+            /// </summary>
+            public void Delete() {
+                this.MeasureGroup.PhysicalMeasureGroup.Partitions.Remove(this.PhysicalPartition);
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="partitionsToMerge"></param>
+            public void Merge(List<AnalysisServicesPartition> partitionsToMerge) {
+                List<Partition> physicalPartitionToMerge = new List<Partition>();
+
+                foreach (AnalysisServicesPartition a in partitionsToMerge) {
+                    foreach (RelationalPartition r in a.RelationalPartitionsInside) {
+                        this.AddRelationalPartition(r);
+                    }
+                    physicalPartitionToMerge.Add(a.PhysicalPartition);
+                }
+                this.PhysicalPartition.Merge(physicalPartitionToMerge);
+                this.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// This class holds a list of AnalysisServicesPartition and implements some
+        /// helper function to get a partition by 
+        /// 
+        /// </summary>
+        public class AnalysisServicesPartitionList : List<AnalysisServicesPartition> {
+
+            /// <summary>
+            /// 
+            /// Returns the first partition that contains some data for the year
+            /// passed as a parameter.
+            /// 
+            /// </summary>
+            /// <param name="year"></param>
+            /// <returns></returns>
+            public AnalysisServicesPartition GetPartitionForYear(int year) {
+                foreach (AnalysisServicesPartition p in this) {
+                    if (p.Kind == AnalysisServicesPartition.PartitionKind.Year) {
+                        for (int month = 1; month < 13; month++) {
+                            if (p.ContainsYearMonth(year * 100 + month)) {
+                                return p;
+                            }
+                        }
+                    }
+                }
+                return null;
+            }
+
+            /// <summary>
+            /// 
+            /// Returns the SSAS partition containing the relational partition passed
+            /// as a parameter
+            /// 
+            /// </summary>
+            /// <param name="r"></param>
+            /// <returns></returns>
+            public AnalysisServicesPartition GetPartitionContaining(RelationalPartition r) {
+                foreach (AnalysisServicesPartition p in this) {
+                    if (p.ContainsRelationalPartition(r)) {
+                        return p;
+                    }
+                }
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// Entry point for the script
+        /// 
+        /// </summary>
+        public void Main() {
+            RunningDts = Dts;
+            try {
+
+                //
+                //  Here we load the relational partition list with the list of partitions
+                //  stored in the variable "RelationalPartitions", which holds all the distinct
+                //  values for OrderDateMonth
+                //
+                RelationalPartitions.LoadFrom(Dts.Variables["User::RelationalPartitions"].Value);
+ 
+                //
+                //  Here we open the connection with the Analysis Services cube and load
+                //  the partition information from it.
+                //
+                //  We need to extract the server name and database name from the connection
+                //  in order to construct a suitable connection string for the AMO cube
+                //
+                DbConnectionStringBuilder connBuilder = new DbConnectionStringBuilder();
+                connBuilder.ConnectionString = Dts.Connections[Parameters.AnalysisServicesConnection].ConnectionString;
+                string serverName = connBuilder["Data Source"].ToString();
+                string databaseName = connBuilder["Initial Catalog"].ToString();
+
+                AnalysisServicesMeasureGroup mg = new AnalysisServicesMeasureGroup();
+                mg.ConnectionString = String.Format("Data Source={0}", serverName);
+                mg.DataBaseName = databaseName;
+                mg.CubeName = Parameters.AnalysisServicesCubeName;
+                mg.MeasureGroupName = Parameters.AnalysisServicesMeasureGroupName;
+                mg.Connect();
+
+                //
+                //  We log the structure of the partitions read from the cube. Useful
+                //  for debugging purposes, it let us understand what was read from the
+                //  SSAS cube to check that the algorithm is working properly
+                //
+                DebugMessage("Determined existing partitions, here is the structure: ");
+                foreach (AnalysisServicesPartition a in mg.ExistingPartitions) {
+                    string message = String.Format("Existing {0} partition {1} contains {2} partition{3}: ", a.Kind, a.PhysicalPartition.Name, a.RelationalPartitionsInside.Count, (a.RelationalPartitionsInside.Count == 1 ? "" : "s"));
+                    foreach (RelationalPartition r in a.RelationalPartitionsInside) {
+                        message += r.YearMonth.ToString () + " ";
+                    }
+                    DebugMessage(message);
+                }
+
+                //
+                //  Now we iterate over all the relational partition and, for each one, we check
+                //  into which SSAS partition it needs to go.
+                //
+                foreach (RelationalPartition r in RelationalPartitions) {
+                    int ageInMonth = (RelationalPartitions.LastYearMonth / 100 * 12 + RelationalPartitions.LastYearMonth % 12) -
+                                     (r.YearMonth / 100 * 12 + r.YearMonth % 100);
+                    //
+                    //  The parameter to check is the age, expressed in months
+                    //
+                    if (ageInMonth <= Parameters.MaxNumberOfMonths) {
+                        if (ageInMonth < Parameters.NumberOfMonthsPartitionedByMonth) {
+                            mg.NewPartitions.Add(new AnalysisServicesPartition(mg, r, AnalysisServicesPartition.PartitionKind.Month));
+                        } else {
+                            AnalysisServicesPartition actualYearPartition = mg.NewPartitions.GetPartitionForYear(r.YearMonth / 100);
+
+                            if (actualYearPartition == null) {
+                                mg.NewPartitions.Add(new AnalysisServicesPartition(mg, r, AnalysisServicesPartition.PartitionKind.Year));
+                            } else {
+                                actualYearPartition.AddRelationalPartition(r);
+                            }
+                        }
+                    } else {
+                        DebugMessage(String.Format("Partition {0} is too old and will not be added to the cube", r.YearMonth));
+                    }
+                }
+
+                DebugMessage("Determined new partitions, here is the structure: ");
+                foreach (AnalysisServicesPartition a in mg.NewPartitions) {
+                    string message = String.Format("New {0} partition {1} contains {2} partition{3}: ", a.Kind, a.Name, a.RelationalPartitionsInside.Count, (a.RelationalPartitionsInside.Count == 1 ? "" : "s"));
+                    foreach (RelationalPartition r in a.RelationalPartitionsInside) {
+                        message += r.YearMonth.ToString() + " ";
+                    }
+                    DebugMessage(message);
+                }
+
+                //
+                //  Now we need to verify the differences between the old partition schema and the
+                //  new one, applying all the needed changes to 
+                //
+                foreach (AnalysisServicesPartition newPartition in mg.NewPartitions) {
+                    switch (newPartition.Kind) {
+                        case AnalysisServicesPartition.PartitionKind.Month:
+                            AnalysisServicesPartition actualMonthPartition = mg.ExistingPartitions.GetPartitionContaining(newPartition.RelationalPartitionsInside[0]);
+                            if (actualMonthPartition != null) {
+                                if (actualMonthPartition.Kind == AnalysisServicesPartition.PartitionKind.Month) {
+                                    DebugMessage(String.Format("Partition {0} is already ok.", newPartition.Name));
+                                    mg.ExistingPartitions.Remove(actualMonthPartition);
+                                } else {
+                                    if (newPartition.RelationalPartitionsInside.Count == 1) {
+                                        DebugMessage(String.Format("Partition {0} is in a yearly partition with only one month, changed partition type", newPartition.Name));
+                                        actualMonthPartition.Kind = AnalysisServicesPartition.PartitionKind.Month;
+                                        actualMonthPartition.SaveChanges();
+                                        mg.ExistingPartitions.Remove(actualMonthPartition);
+                                    } else {
+                                        DebugMessage(String.Format("Partition {0} is in a yearly partition with many month, destroyed old partition ({0}) and created new one ({1}).", actualMonthPartition.Name, newPartition.Name));
+                                        actualMonthPartition.Delete();
+                                        mg.ExistingPartitions.Remove(actualMonthPartition);
+                                        newPartition.SaveChanges();
+                                    }
+                                }
+                            } else {
+                                DebugMessage(String.Format("Partition {0} has been created.", newPartition.Name));
+                                newPartition.SaveChanges();
+                            }
+                            break;
+                        case AnalysisServicesPartition.PartitionKind.Year :
+                            AnalysisServicesPartition actualYearPartition = mg.ExistingPartitions.GetPartitionForYear (newPartition.RelationalPartitionsInside[0].YearMonth / 100);
+                            if (actualYearPartition != null) {
+                                bool completelyContained = true;
+                                foreach (RelationalPartition oldRelPartition in actualYearPartition.RelationalPartitionsInside) {
+                                    if (!newPartition.ContainsRelationalPartition (oldRelPartition)) {
+                                        completelyContained = false;
+                                        break;
+                                    }
+                                }
+                                if (completelyContained) {
+                                    List<AnalysisServicesPartition> partitionsToMerge = new List<AnalysisServicesPartition>();
+
+                                    foreach (RelationalPartition newRelPartition in newPartition.RelationalPartitionsInside) {
+                                        if (!actualYearPartition.ContainsRelationalPartition (newRelPartition)) {
+                                            AnalysisServicesPartition actualPartitionForNonIncludedMonth = mg.ExistingPartitions.GetPartitionContaining(newRelPartition);
+                                            if (actualPartitionForNonIncludedMonth != null) {
+                                                if (actualPartitionForNonIncludedMonth.Kind == AnalysisServicesPartition.PartitionKind.Month) {
+                                                    partitionsToMerge.Add(actualPartitionForNonIncludedMonth);
+                                                }
+                                            } else {
+
+                                            }
+                                        }
+                                    }
+                                    if (partitionsToMerge.Count > 0) {
+                                        foreach (AnalysisServicesPartition a in partitionsToMerge) {
+                                            DebugMessage(String.Format("Merging partition {0} into {1}", a.Name, newPartition.Name));
+                                        }
+                                        
+                                        actualYearPartition.Merge(partitionsToMerge);
+                                    } else {
+                                        DebugMessage(String.Format("Year partition {0} is already ok.", newPartition.Name));
+                                    }
+                                }
+                            } else {
+                                DebugMessage(String.Format("Partition {0} has been created.", newPartition.Name));
+                                newPartition.SaveChanges();
+                            }
+                            break;
+                    }
+                }
+
+                mg.SaveChanges();
+                mg.Disconnect();
+            } catch (Exception e) {
+                DebugMessage(String.Format("Error: {0}", e.Message));
+                Dts.TaskResult = (int)ScriptResults.Failure;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="st_638770be22ef401b97384cde33747090.csproj"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       OutputType - Must be "Library" for VSTA.
+       NoStandardLibraries - Set to "false" for VSTA.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>ST_638770be22ef401b97384cde33747090.csproj</RootNamespace>
+    <AssemblyName>ST_638770be22ef401b97384cde33747090.csproj</AssemblyName>
+    <ProjectGuid>{06B4FA63-3669-440B-8214-01D80B3F1724}</ProjectGuid>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Debug" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Release" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- This section enables pre- and post-build steps. However,
+       it is recommended that MSBuild tasks be used instead of these properties.
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+       AppDesigner - Specifies the directory where the application properties files can
+                     be found.
+  -->
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <!-- Include the default configuration information and metadata files for the add-in.
+         These files are copied to the build output directory when the project is
+         built, and the path to the configuration file is passed to add-in on the command
+         line when debugging.
+    -->
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="#HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\9.0\InstallDir#\devenv.exe" />
+        <Host Name="SSIS_ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST110</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+</Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:ProjectId>{85356A43-CEB9-4FDF-8F75-1ABB57E127FA}</msb:ProjectId>
+		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>st_638770be22ef401b97384cde33747090</msb:DisplayName>
+		<msb:CodeName>st_638770be22ef401b97384cde33747090</msb:CodeName>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="ScriptMain.cs"/>
+		<msb:Project Include="st_638770be22ef401b97384cde33747090.csproj"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_638770be22ef401b97384cde33747090.csproj.Properties.Settings.get_Default():ST_638770be22ef401b97384cde33747090.csproj.Properties.Sett" +
+    "ings")]
+
+namespace ST_638770be22ef401b97384cde33747090.csproj.Properties
+{
+
+
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+
+        public static Settings Default
+        {
+            get
+            {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_638770be22ef401b97384cde33747090.csproj")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("ST_638770be22ef401b97384cde33747090.csproj")]
+[assembly: AssemblyCopyright("Copyright @ Microsoft 2009")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Resources.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_638770be22ef401b97384cde33747090.csproj.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_638770be22ef401b97384cde33747090.csproj.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_638770be22ef401b97384cde33747090.csproj.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_638770be22ef401b97384cde33747090.csproj.Properties
+{
+
+
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources
+    {
+
+        private static global::System.Resources.ResourceManager resourceMan;
+
+        private static global::System.Globalization.CultureInfo resourceCulture;
+
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources()
+        {
+        }
+
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if ((resourceMan == null))
+                {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_638770be22ef401b97384cde33747090.csproj.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
+                return resourceCulture;
+            }
+            set
+            {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <BinaryItem
+                Name="ST_638770be22ef401b97384cde33747090.csproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHDlCVIAAAAAAAAAAOAAAiELAQsAADoAAAAIAAAAAAAAnlkA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACgAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEhZAABTAAAAAGAAAJAEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAApDkAAAAgAAAAOgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAJAEAAAAYAAAAAYAAAA8AAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAQgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACA
+WQAAAAAAAEgAAAACAAUAIDQAACglAAABAAAAAAAAAGgzAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKA4AAAoqEzACAC0AAAABAAARfgEAAAQtIHIBAABw0AIA
+AAIoDwAACm8QAAAKcxEAAAoKBoABAAAEfgEAAAQqGn4CAAAEKh4CgAIAAAQqGn4DAAAEKi5zBgAA
+BoADAAAEKh4CKBQAAAoqABMwBwAhAAAAAgAAERYKfgQAAARvFgAAChdygQAAcAJygQAAcBYSAG8X
+AAAKKgAAABswBQCOBgAAAwAAEQIoGAAACoAEAAAEfgUAAAQCKBgAAApvGQAACnKDAABwbxoAAApv
+GwAACm8QAAAGcxwAAAoKBgIoGAAACm8dAAAKfg8AAARvHgAACm8fAAAKbyAAAAoGcrkAAHBvIQAA
+Cm8iAAAKCwZy0QAAcG8hAAAKbyIAAAoMcxYAAAYNCXLxAABwBygjAAAKfRcAAAQJCH0YAAAECX4Q
+AAAEfRkAAAQJfhEAAAR9GgAABAlvEwAABiZyEQEAcCgIAAAGCXsfAAAEbyQAAAoTFzjGAAAAEhco
+JQAAChMEcoEBAHAajQEAAAETGBEYFhEEeyIAAASMCwAAAqIRGBcRBHskAAAEbyYAAAqiERgYEQR7
+JQAABG8nAAAKjCwAAAGiERgZEQR7JQAABG8nAAAKFy4Hcu8BAHArBXKBAABwohEYKCgAAAoTBREE
+eyUAAARvKQAAChMZKyMSGSgqAAAKEwYRBREGfBIAAAQoKwAACnLzAQBwKCwAAAoTBRIZKC0AAAot
+1N4OEhn+FgQAABtvLgAACtwRBSgIAAAGEhcoLwAACjou////3g4SF/4WAwAAG28uAAAK3H4FAAAE
+bykAAAoTGjjBAAAAEhooKgAAChMHfgUAAAR7FgAABB9kWx8MWn4FAAAEexYAAAQfDF1YEQd7EgAA
+BB9kWx8MWhEHexIAAAQfZF1YWRMIEQh+CQAABDBbEQh+CgAABC8WCXsgAAAECREHF3MYAAAGbzAA
+AAorVwl7IAAABBEHexIAAAQfZFtvIQAABhMJEQktFgl7IAAABAkRBxZzGAAABm8wAAAKKyYRCREH
+bxkAAAYrG3L3AQBwEQd7EgAABIwsAAABKCMAAAooCAAABhIaKC0AAAo6M////94OEhr+FgQAABtv
+LgAACtxybQIAcCgIAAAGCXsgAAAEbyQAAAoTGzjBAAAAEhsoJQAAChMKctMCAHAajQEAAAETHBEc
+FhEKeyIAAASMCwAAAqIRHBcRCm8dAAAGohEcGBEKeyUAAARvJwAACowsAAABohEcGREKeyUAAARv
+JwAAChcuB3LvAQBwKwVygQAAcKIRHCgoAAAKEwsRCnslAAAEbykAAAoTHSsjEh0oKgAAChMMEQsR
+DHwSAAAEKCsAAApy8wEAcCgsAAAKEwsSHSgtAAAKLdTeDhId/hYEAAAbby4AAArcEQsoCAAABhIb
+KC8AAAo6M////94OEhv+FgMAABtvLgAACtwJeyAAAARvJAAAChMeOJQCAAASHiglAAAKEw0RDXsi
+AAAEEx8RH0UCAAAAAAEAAAUAAAA4bgIAAAl7HwAABBENeyUAAAQWbzEAAApvIgAABhMOEQ45uAAA
+ABEOeyIAAAQXMylyNwMAcBENbx0AAAYoIwAACigIAAAGCXsfAAAEEQ5vMgAACiY4GgIAABENeyUA
+AARvJwAAChczOHJxAwBwEQ1vHQAABigjAAAKKAgAAAYRDhd9IgAABBEObx4AAAYJex8AAAQRDm8y
+AAAKJjjTAQAAchgEAHARDm8dAAAGEQ1vHQAABigzAAAKKAgAAAYRDm8fAAAGCXsfAAAEEQ5vMgAA
+CiYRDW8eAAAGOJUBAABy+wQAcBENbx0AAAYoIwAACigIAAAGEQ1vHgAABjhzAQAACXsfAAAEEQ17
+JQAABBZvMQAACnsSAAAEH2RbbyEAAAYTDxEPOS0BAAAXExARD3slAAAEbykAAAoTICsZEiAoKgAA
+ChMREQ0REW8aAAAGLQUWExArCRIgKC0AAAot3t4OEiD+FgQAABtvLgAACtwREDn+AAAAczQAAAoT
+EhENeyUAAARvKQAAChMhKzoSISgqAAAKExMRDxETbxoAAAYtJgl7HwAABBETbyIAAAYTFBEULBMR
+FHsiAAAEFzMJERIRFG8wAAAKEiEoLQAACi293g4SIf4WBAAAG28uAAAK3BESbzUAAAoWMVUREm8k
+AAAKEyIrJhIiKCUAAAoTFXI7BQBwERVvHQAABhENbx0AAAYoMwAACigIAAAGEiIoLwAACi3R3g4S
+Iv4WAwAAG28uAAAK3BEPERJvIAAABis1cnkFAHARDW8dAAAGKCMAAAooCAAABisdcvsEAHARDW8d
+AAAGKCMAAAooCAAABhENbx4AAAYSHigvAAAKOmD9///eDhIe/hYDAAAbby4AAArcCW8VAAAGCW8U
+AAAG3iYTFnK9BQBwERZvNgAACigjAAAKKAgAAAYCKBgAAAoXbzcAAAreACoAAEH0AAACAAAATwEA
+ADAAAAB/AQAADgAAAAAAAAACAAAAyQAAANkAAACiAQAADgAAAAAAAAACAAAAvAEAANQAAACQAgAA
+DgAAAAAAAAACAAAANgMAADAAAABmAwAADgAAAAAAAAACAAAAtQIAANQAAACJAwAADgAAAAAAAAAC
+AAAABAUAACYAAAAqBQAADgAAAAAAAAACAAAAVAUAAEcAAACbBQAADgAAAAAAAAACAAAAvAUAADMA
+AADvBQAADgAAAAAAAAACAAAApAMAAKcCAABLBgAADgAAAAAAAAAAAAAACwAAAFwGAABnBgAAJgAA
+AC4AAAFGFIAEAAAEcxIAAAaABQAABCoeAig4AAAKKgAAAzABAFUAAAAAAAAAHySACQAABB8MgAoA
+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
+HgIoNAAACiq0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIs
+IG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9r
+ZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIA
+AAAAAAAAAAAAAFBBRFBBRFC0AAAAQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAzMTkAAAAABQBsAAAA
+OAoAACN+AACkCgAARA4AACNTdHJpbmdzAAAAAOgYAADQBwAAI1VTALggAAAQAAAAI0dVSUQAAADI
+IAAAYAQAACNCbG9iAAAAAAAAAAIAAAFXH6IJCQMAAAD6JTMAFgAAAQAAAEUAAAAMAAAAKAAAACMA
+AAATAAAAAQAAAGwAAAAEAAAADwAAAA4AAAADAAAABAAAAAUAAAAFAAAAAQAAAAcAAAABAAAACAAA
+AAAACgABAAAAAAAGAHABaQEKAIwBdwEOAOwBwwEGAAgCaQEGAA0CaQEGADQCGQIGAEwCOwIGAH0C
+aAIOAAQDwwESAA0F8gQSABsF8gQSAC0F8gQSADcF8gQSAHoF8gQGAPsG4QYGACYHFAcGAD0HFAcG
+AFoHFAcGAHkHFAcGAJIHFAcGAKsHFAcGAMYHFAcGAOEHFAcGAPoHFAcGADMIEwgGAFMIEwgGAIQI
+cQgGAKEIaQEGAKYIaQEGAMoIFAcKAPYI4AgKAA8J4AgGACQJEwgOAEYJwwEOAGgJwwEWAN4JvgkW
+APYJvgkaADEKHgoWAEsKvgkWAGcKvgkGAKwKaQEbALoKAAASAN8K8gQGAPgKaQEGAA4LaQEGAC0L
+aQEaAFILEgoaAG4LXAsaAIQLEgoaAJ8LEgoGAM0LugsaANkLEgoSAOYL8gQSABEM8gQSACoM8gQS
+AFMM8gQSAIQM8gQSAJ0M8gQSALAM8gQSAL8M8gQGAPYMaQEGACkNHQ0SAFgN8gQSAHkN8gQSAIYN
+8gQSAKAN8gQSALUN8gQSAMwN8gQeAOwNugsAAAAAAQAAAAAAAQABAAAAEAA5AEMABQABAAEAAAEQ
+AHkAQwAJAAMABQABABAAggCNAA0ABAAIAAMBAAC4AAAAEQAGAAwAggEQAMYAAAAFAAkADAACABAA
+0QAAAAUAEgANAAIAEADlAAAABgAVABAAAgAQAP0AAAAFABcAEwACABAAGgEAAAUAIgAXAAIBAAA0
+AQAAEQAmACEAAgAQAEIBAAAKACkAIQARAFwCIQARAIkCJQARANMCRwARABYDWgAWACEDXgAGBjsD
+YgBWgEMDZQBWgEsDZQAWAFMDYgAWAGUDYgAWAIYDcwAWAKgDcwAWAMcDcwAWANUDcwAWAO4DcwAW
+AAkEcwAWACIEcwAGAEMEYgAGAE0EcwAGAGEEcwAGAIUEYgAGAJQEYgAGALoEcwAGAMsEcwAGANgE
+cwAGAOEEcwAGABQFkQAGACQFlQABADIFmQAGAEQFnQAGAFkFoQAGAGwFoQAGAIQFpQAGALMFrQAG
+ADcFsQAGALgFpQAGAMoFtQAGBjsDYgBWgEUGrQBWgEoGrQBQIAAAAACDGJkCKQABAFggAAAAAJMI
+nwItAAEAkSAAAAAAkwizAjIAAQCYIAAAAACTCL8CNwABAKAgAAAAAJYI4wJLAAIAsyAAAAAAhhiZ
+AikAAgCnIAAAAACRGD8JLQECALwgAAAAAJYA9wJVAAIA7CAAAAAAhgA2AykAAwCOKAAAAACGGJkC
+KQADAHwoAAAAAJEYPwktAQMAmCgAAAAAkRg/CS0BAwD5KAAAAACGGJkCdgADABYpAAAAAIYAawR9
+AAYAOSkAAAAA5gF7BIEABgBUKQAAAACGAKIEhgAHABAqAAAAAIYAqwSLAAgAaCoAAAAAhhiZAikA
+CQCIKgAAAACGAJQFqQAJAGYrAAAAAIYAnAUpAAkAcysAAAAAhgCnBSkACQCAKwAAAACGGJkCKQAJ
+AKArAAAAAIYYmQK9AAkAdSwAAAAAhhiZAsUACwCiLAAAAACGAOUFzwAOALAsAAAAAIYA/AXVAA8A
+FC0AAAAAhgAYBtsAEABwLQAAAACGAGsEfQARANQtAAAAAIYIKgZ9ABEAVC4AAAAAhgCnBSkAEQDE
+MQAAAACGADMGKQARAOQxAAAAAIYAOgbgABEAlDIAAAAAhgBQBu4AEgAIMwAAAACGAGQG9AATAGAz
+AAAAAIYYmQIpABQAAAABAHsGAAABAIEGAAABAIUGAAACAI8GAAADAKMGAAABAK0GAAABALEGAAAB
+AKMGAAABAL4GAAACAMEGAAABAL4GAAACAMMGAAADAMUGAAABAMEGAAABAMEGAAABAKMGAAABAMoG
+AAABANwGAAABAMMGBwAVAHkAmQL7AIEAmQL7AIkAmQL7AJEAmQL7AJkAmQL7AKEAmQL7AKkAmQL7
+ALEAmQL7ALkAmQL7AMEAmQL7AMkAmQIAAdEAmQIpANkAmQIpAAkAmQIpAOEAuAgFAeEA0wgMATkA
+mQIRAfkAmQIdAQkBmQIpABEAmQIpABEBmQIpAEkAfAkxARkBhwk3ARkAlwlGAUkA6AlLASEB/wlR
+ASkBCApYATEBmQIpAEkAVwpcATkB/wliAUEBeQp9ADEBjgr7ADEB/wlpAQkAowp9AEkBswpuARQA
+xQp0ARwA0wqGAVkBKgZ9AAwA7gqLAUkBswqPAQwAxQp0ASQA0wqGAWEBowp9AEkB/gqeASQABQup
+AGkBGgspABwABQupABQAIgulAQwA/wmrARQAJguxAUkBswq3ARQAmQIpABQA7gqLAXEBNwt9AEkA
+QwsAARkAmQIpAEkBswo0AmEBewQ8AnkBmQIpAIEBmQIpAIEBfwtBAnkBlgtJApEBxQpPApkB0wpY
+AaEB/wlpAQwAIgulAZkBBQupAAwA4QspAAwAmQIpAFEAmQIpAFEAlAX7AFEA+Qt2AqkBBwx8AlkA
+IAyCArEBBwyIAmEAQQyOArkBBwyUAmkAZwyaAsEB/wmgAkkBdgymAskB7gqLAVEAnAUpANEBqQwp
+ANkB1AyyAuEB5Ay4AkkB7Ay9AukB/gzDAkkBBg2LAUkBEQ2mAvEBmQIpAPEBNw3eAnEAQg3wAlkB
+SA37AFkBUQ37AHEAYw31AlkBcg19AAECmQL7AnEAlQ0BA0kB/goIA+EBIgsOA3EAqw37ABkC2g0W
+A8EBIgsdA+EB5A37AsEBJgs+AywAmQIpACwAIgulAXEAOgZLAwgAHABpAAgAIABuAAgAnABpAAgA
+oABuACkAkwAkAS4AGwACBC4AIwACBC4AYwBABC4ACwCKAy4AEwDSAy4AMwDSAy4AKwAIBC4AOwAX
+BC4AQwACBC4AWwA3BEMAawBuAEkAkwAkAWEAmwBuAIMAqwBuABgBQgG+AVUCaAKsAsgC0QLlAuwC
+IwNSA20DfAMCAAEAAwADAAoABAAAAEwCPQAAAMsCQgAAAO8CUAAAAEAG6gACAAIAAwABAAQABQAC
+AAMABQACAAUABwACAB0ACQATABoAfgGWAUQDBIAAAAEAAABtE0A+AAAAAAAAjQAAAAQAAAAAAAAA
+AAAAAAEAYAEAAAAABAAAAAAAAAAAAAAAAQBpAQAAAAALAAAAAAAAAAAAAAAKAKQBAAAAAAoAAAAA
+AAAAAAAAAAoA8gQAAAAACwAAAAAAAAAAAAAACgCfCQAAAAAEAAAAAAAAAAAAAAABABIKAAAAAAIA
+AAAAAAAAAAAAAAEAYAEAAAAAAAAAAAEAAAD4DQAABQAEAAYABAAHAAQACAAEAAkABAAKAAQACwAK
+AAwABAAAAAAAADxNb2R1bGU+AFNUXzYzODc3MGJlMjJlZjQwMWI5NzM4NGNkZTMzNzQ3MDkwLmNz
+cHJvai5kbGwAUmVzb3VyY2VzAFNUXzYzODc3MGJlMjJlZjQwMWI5NzM4NGNkZTMzNzQ3MDkwLmNz
+cHJvai5Qcm9wZXJ0aWVzAFNldHRpbmdzAFNjcmlwdE1haW4AU1RfNjM4NzcwYmUyMmVmNDAxYjk3
+Mzg0Y2RlMzM3NDcwOTAuY3Nwcm9qAFNjcmlwdFJlc3VsdHMAUGFyYW1ldGVycwBSZWxhdGlvbmFs
+UGFydGl0aW9uAFJlbGF0aW9uYWxQYXJ0aXRpb25MaXN0AEFuYWx5c2lzU2VydmljZXNNZWFzdXJl
+R3JvdXAAQW5hbHlzaXNTZXJ2aWNlc1BhcnRpdGlvbgBQYXJ0aXRpb25LaW5kAEFuYWx5c2lzU2Vy
+dmljZXNQYXJ0aXRpb25MaXN0AG1zY29ybGliAFN5c3RlbQBPYmplY3QAU3lzdGVtLkNvbmZpZ3Vy
+YXRpb24AQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UATWljcm9zb2Z0LlNxbFNlcnZlci5TY3JpcHRU
+YXNrAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tzLlNjcmlwdFRhc2sAVlNUQVJUU2NyaXB0
+T2JqZWN0TW9kZWxCYXNlAEVudW0ASUNvbXBhcmFibGUAU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVy
+aWMATGlzdGAxAFN5c3RlbS5SZXNvdXJjZXMAUmVzb3VyY2VNYW5hZ2VyAHJlc291cmNlTWFuAFN5
+c3RlbS5HbG9iYWxpemF0aW9uAEN1bHR1cmVJbmZvAHJlc291cmNlQ3VsdHVyZQAuY3RvcgBnZXRf
+UmVzb3VyY2VNYW5hZ2VyAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAEN1bHR1cmUAZGVmYXVsdElu
+c3RhbmNlAGdldF9EZWZhdWx0AERlZmF1bHQARGVidWdNZXNzYWdlAFNjcmlwdE9iamVjdE1vZGVs
+AFJ1bm5pbmdEdHMAUmVsYXRpb25hbFBhcnRpdGlvbnMATWFpbgB2YWx1ZV9fAFN1Y2Nlc3MARmFp
+bHVyZQBNYXhOdW1iZXJPZk1vbnRocwBOdW1iZXJPZk1vbnRoc1BhcnRpdGlvbmVkQnlNb250aABB
+bm5vdGF0aW9uTmFtZUZvclBhcnRpdGlvbnNJbnNpZGUAQW5ub3RhdGlvbk5hbWVGb3JQYXJ0aXRp
+b25UeXBlAEZhY3RUYWJsZU5hbWUARmFjdFRhYmxlUGFydGl0aW9uQ29sdW1uAEFuYWx5c2lzU2Vy
+dmljZXNDb25uZWN0aW9uAEFuYWx5c2lzU2VydmljZXNDdWJlTmFtZQBBbmFseXNpc1NlcnZpY2Vz
+TWVhc3VyZUdyb3VwTmFtZQBZZWFyTW9udGgAUGFydGl0aW9uQ29sdW1uTmFtZQBUYWJsZU5hbWUA
+UmVsYXRpb25hbFF1ZXJ5AENvbXBhcmVUbwBGaXJzdFllYXJNb250aABMYXN0WWVhck1vbnRoAExv
+YWRGcm9tAEdldEJ5WWVhck1vbnRoAENvbm5lY3Rpb25TdHJpbmcARGF0YUJhc2VOYW1lAEN1YmVO
+YW1lAE1lYXN1cmVHcm91cE5hbWUATWljcm9zb2Z0LkFuYWx5c2lzU2VydmljZXMAU2VydmVyAHNl
+cnZlcgBEYXRhYmFzZQBkYXRhYmFzZQBDdWJlAGN1YmUATWVhc3VyZUdyb3VwAFBoeXNpY2FsTWVh
+c3VyZUdyb3VwAEV4aXN0aW5nUGFydGl0aW9ucwBOZXdQYXJ0aXRpb25zAFBhcnRpdGlvbgBNYXN0
+ZXJQYXJ0aXRpb24AQ29ubmVjdABEaXNjb25uZWN0AFNhdmVDaGFuZ2VzAEtpbmQAUGh5c2ljYWxQ
+YXJ0aXRpb24AUmVsYXRpb25hbFBhcnRpdGlvbnNJbnNpZGUAQWRkUmVsYXRpb25hbFBhcnRpdGlv
+bgBDb250YWluc1JlbGF0aW9uYWxQYXJ0aXRpb24AQ29udGFpbnNZZWFyTW9udGgAZ2V0X05hbWUA
+RGVsZXRlAE1lcmdlAE5hbWUAWWVhcgBNb250aABHZXRQYXJ0aXRpb25Gb3JZZWFyAEdldFBhcnRp
+dGlvbkNvbnRhaW5pbmcAdmFsdWUAbXNnAHRhYmxlTmFtZQBwYXJ0aXRpb25Db2x1bW5OYW1lAHll
+YXJNb250aABvYmoAc3Npc1ZhcmlhYmxlAG1nAHAAcgBraW5kAHBhcnRpdGlvbnNUb01lcmdlAHll
+YXIAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAU3lz
+dGVtLlJlZmxlY3Rpb24AQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9u
+QXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlB
+dHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmli
+dXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAEFzc2VtYmx5Q3VsdHVyZUF0dHJpYnV0ZQBB
+c3NlbWJseVZlcnNpb25BdHRyaWJ1dGUAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBD
+b21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmli
+dXRlAFN5c3RlbS5EaWFnbm9zdGljcwBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAFR5cGUA
+UnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUAQXNzZW1ibHkAZ2V0X0Fzc2VtYmx5
+AFN5c3RlbS5Db21wb25lbnRNb2RlbABFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUARWRpdG9yQnJv
+d3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUALmNjdG9yAFNTSVNTY3JpcHRU
+YXNrRW50cnlQb2ludEF0dHJpYnV0ZQBFdmVudHNPYmplY3RXcmFwcGVyAGdldF9FdmVudHMARmly
+ZUluZm9ybWF0aW9uAGdldF9EdHMATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAVmFyaWFibGVzAGdldF9WYXJpYWJsZXMAVmFyaWFi
+bGUAZ2V0X0l0ZW0AZ2V0X1ZhbHVlAFN5c3RlbS5EYXRhAFN5c3RlbS5EYXRhLkNvbW1vbgBEYkNv
+bm5lY3Rpb25TdHJpbmdCdWlsZGVyAENvbm5lY3Rpb25zAGdldF9Db25uZWN0aW9ucwBDb25uZWN0
+aW9uTWFuYWdlcgBnZXRfQ29ubmVjdGlvblN0cmluZwBzZXRfQ29ubmVjdGlvblN0cmluZwBUb1N0
+cmluZwBTdHJpbmcARm9ybWF0AEVudW1lcmF0b3IAR2V0RW51bWVyYXRvcgBnZXRfQ3VycmVudABO
+YW1lZENvbXBvbmVudABnZXRfQ291bnQASW50MzIAQ29uY2F0AE1vdmVOZXh0AElEaXNwb3NhYmxl
+AERpc3Bvc2UAQWRkAFJlbW92ZQBFeGNlcHRpb24AZ2V0X01lc3NhZ2UAc2V0X1Rhc2tSZXN1bHQA
+RGF0YVRhYmxlAFN5c3RlbS5EYXRhLk9sZURiAE9sZURiRGF0YUFkYXB0ZXIARmlsbABEYXRhUm93
+Q29sbGVjdGlvbgBnZXRfUm93cwBJbnRlcm5hbERhdGFDb2xsZWN0aW9uQmFzZQBTeXN0ZW0uQ29s
+bGVjdGlvbnMASUVudW1lcmF0b3IARGF0YVJvdwBTb3J0AERhdGFiYXNlQ29sbGVjdGlvbgBnZXRf
+RGF0YWJhc2VzAEdldEJ5TmFtZQBDdWJlQ29sbGVjdGlvbgBnZXRfQ3ViZXMATWVhc3VyZUdyb3Vw
+Q29sbGVjdGlvbgBnZXRfTWVhc3VyZUdyb3VwcwBQYXJ0aXRpb25Db2xsZWN0aW9uAGdldF9QYXJ0
+aXRpb25zAG9wX0luZXF1YWxpdHkATW9kZWxDb21wb25lbnRDb2xsZWN0aW9uAE1ham9yT2JqZWN0
+AFVwZGF0ZQBNb2RlbENvbXBvbmVudABBbm5vdGF0aW9uQ29sbGVjdGlvbgBnZXRfQW5ub3RhdGlv
+bnMAR2V0VGV4dABTdWJzdHJpbmcAQ29udmVydABUb0ludDMyAGdldF9MZW5ndGgAb3BfRXF1YWxp
+dHkAU3lzdGVtLlRleHQAU3RyaW5nQnVpbGRlcgBBcHBlbmRMaW5lAENsb25lAHNldF9OYW1lAHNl
+dF9JRABEYXRhU291cmNlAGdldF9EYXRhU291cmNlAGdldF9JRABRdWVyeUJpbmRpbmcAVGFidWxh
+ckJpbmRpbmcAc2V0X1NvdXJjZQBBbm5vdGF0aW9uAHNldF9TbGljZQBQcm9jZXNzYWJsZU1ham9y
+T2JqZWN0AEFuYWx5c2lzU3RhdGUAc2V0X1N0YXRlAFNldFRleHQASUVudW1lcmFibGUAU1RfNjM4
+NzcwYmUyMmVmNDAxYjk3Mzg0Y2RlMzM3NDcwOTAuY3Nwcm9qLlByb3BlcnRpZXMuUmVzb3VyY2Vz
+LnJlc291cmNlcwAAAAB/UwBUAF8ANgAzADgANwA3ADAAYgBlADIAMgBlAGYANAAwADEAYgA5ADcA
+MwA4ADQAYwBkAGUAMwAzADcANAA3ADAAOQAwAC4AYwBzAHAAcgBvAGoALgBQAHIAbwBwAGUAcgB0
+AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAEANVUAcwBlAHIAOgA6AFIAZQBsAGEAdABpAG8A
+bgBhAGwAUABhAHIAdABpAHQAaQBvAG4AcwAAF0QAYQB0AGEAIABTAG8AdQByAGMAZQAAH0kAbgBp
+AHQAaQBhAGwAIABDAGEAdABhAGwAbwBnAAAfRABhAHQAYQAgAFMAbwB1AHIAYwBlAD0AewAwAH0A
+AG9EAGUAdABlAHIAbQBpAG4AZQBkACAAZQB4AGkAcwB0AGkAbgBnACAAcABhAHIAdABpAHQAaQBv
+AG4AcwAsACAAaABlAHIAZQAgAGkAcwAgAHQAaABlACAAcwB0AHIAdQBjAHQAdQByAGUAOgAgAABt
+RQB4AGkAcwB0AGkAbgBnACAAewAwAH0AIABwAGEAcgB0AGkAdABpAG8AbgAgAHsAMQB9ACAAYwBv
+AG4AdABhAGkAbgBzACAAewAyAH0AIABwAGEAcgB0AGkAdABpAG8AbgB7ADMAfQA6ACAAAANzAAAD
+IAAAdVAAYQByAHQAaQB0AGkAbwBuACAAewAwAH0AIABpAHMAIAB0AG8AbwAgAG8AbABkACAAYQBu
+AGQAIAB3AGkAbABsACAAbgBvAHQAIABiAGUAIABhAGQAZABlAGQAIAB0AG8AIAB0AGgAZQAgAGMA
+dQBiAGUAAGVEAGUAdABlAHIAbQBpAG4AZQBkACAAbgBlAHcAIABwAGEAcgB0AGkAdABpAG8AbgBz
+ACwAIABoAGUAcgBlACAAaQBzACAAdABoAGUAIABzAHQAcgB1AGMAdAB1AHIAZQA6ACAAAGNOAGUA
+dwAgAHsAMAB9ACAAcABhAHIAdABpAHQAaQBvAG4AIAB7ADEAfQAgAGMAbwBuAHQAYQBpAG4AcwAg
+AHsAMgB9ACAAcABhAHIAdABpAHQAaQBvAG4AewAzAH0AOgAgAAA5UABhAHIAdABpAHQAaQBvAG4A
+IAB7ADAAfQAgAGkAcwAgAGEAbAByAGUAYQBkAHkAIABvAGsALgAAgKVQAGEAcgB0AGkAdABpAG8A
+bgAgAHsAMAB9ACAAaQBzACAAaQBuACAAYQAgAHkAZQBhAHIAbAB5ACAAcABhAHIAdABpAHQAaQBv
+AG4AIAB3AGkAdABoACAAbwBuAGwAeQAgAG8AbgBlACAAbQBvAG4AdABoACwAIABjAGgAYQBuAGcA
+ZQBkACAAcABhAHIAdABpAHQAaQBvAG4AIAB0AHkAcABlAACA4VAAYQByAHQAaQB0AGkAbwBuACAA
+ewAwAH0AIABpAHMAIABpAG4AIABhACAAeQBlAGEAcgBsAHkAIABwAGEAcgB0AGkAdABpAG8AbgAg
+AHcAaQB0AGgAIABtAGEAbgB5ACAAbQBvAG4AdABoACwAIABkAGUAcwB0AHIAbwB5AGUAZAAgAG8A
+bABkACAAcABhAHIAdABpAHQAaQBvAG4AIAAoAHsAMAB9ACkAIABhAG4AZAAgAGMAcgBlAGEAdABl
+AGQAIABuAGUAdwAgAG8AbgBlACAAKAB7ADEAfQApAC4AAD9QAGEAcgB0AGkAdABpAG8AbgAgAHsA
+MAB9ACAAaABhAHMAIABiAGUAZQBuACAAYwByAGUAYQB0AGUAZAAuAAA9TQBlAHIAZwBpAG4AZwAg
+AHAAYQByAHQAaQB0AGkAbwBuACAAewAwAH0AIABpAG4AdABvACAAewAxAH0AAENZAGUAYQByACAA
+cABhAHIAdABpAHQAaQBvAG4AIAB7ADAAfQAgAGkAcwAgAGEAbAByAGUAYQBkAHkAIABvAGsALgAA
+FUUAcgByAG8AcgA6ACAAewAwAH0AACtNAG8AbgB0AGgAcwBJAG4AcwBpAGQAZQBQAGEAcgB0AGkA
+dABpAG8AbgAAG1AAYQByAHQAaQB0AGkAbwBuAFQAeQBwAGUAAB9DAHUAYgBlAFMAYQBsAGUAcwAu
+AFMAYQBsAGUAcwAAHU8AcgBkAGUAcgBZAGUAYQByAE0AbwBuAHQAaAAAFVMAUwBBAFMAIAAtACAA
+QQBkAHYAAQtTAGEAbABlAHMAAEFTAEUATABFAEMAVAAgACoAIABGAFIATwBNACAAewAwAH0AIABX
+AEgARQBSAEUAIAB7ADEAfQA9AHsAMgB9ACAAAAtNAE8ATgBUAEgAAAlZAEUAQQBSAAAVIABVAE4A
+SQBPAE4AIABBAEwATAAAIXsAMAB9ACAAbwBmACAATQBvAG4AdABoACAAewAxAH0AAB97ADAAfQAg
+AG8AZgAgAFkAZQBhAHIAIAB7ADEAfQAAR1sARABhAHQAZQAgAE8AcgBkAGUAcgBdAC4AWwBDAGEA
+bABlAG4AZABhAHIAIABZAGUAYQByAF0ALgAmAFsAewAwAH0AXQAAWVsARABhAHQAZQAgAE8AcgBk
+AGUAcgBdAC4AWwBDAGEAbABlAG4AZABhAHIAXQAuAFsATQBvAG4AdABoAF0ALgAmAFsAewAwAH0A
+XQAmAFsAewAxAH0AXQAAAAAAAT68SlYyUUW/3XUxlKMgKgAIt3pcVhk04IkIiYRdzYCAzJEGFRIZ
+ARIcBhUSGQESKAMGEh0DBhIhAyAAAQQAABIdBAAAEiEFAAEBEiEECAASHQQIABIhAwYSDAQAABIM
+BAgAEgwEAAEBDgMGEiUDBhIgAgYIAwYRFAQAAAAABAEAAAACBg4GIAMBDg4IAyAADgQgAQgcBCAB
+ARwFIAESHAgDBhIpAwYSLQMGEjEDBhI1AwYSMAMGEjkDIAACAwYRLAMGEiQHBhUSGQESHAcgAgES
+JBI5CSADARIkEhwRLAUgAQESHAUgAQISHAQgAQIICSABARUSGQESKAMoAA4FIAESKAgGIAESKBIc
+BCABAQ4EIAEBCAYAARJxEXUEIAASeQYgAgEOEnkEBwESHQYgAQERgIEIAQACAAAAAAADAAABBSAA
+EoCNCiAGAQgODg4IEAIDBwECBCAAEiUFIAASgJEGIAESgJUcAyAAHAUgABKAnQYgARKAoRwEIAEc
+DgUAAg4OHAkgABURgKkBEwAHFRGAqQESKAQgABMAAyAACAYAAg4OHRwHFRGAqQESHAYAAw4ODg4F
+IAEBEwAFIAETAAgFIAECEwAGAAMODhwcdQcjEoCZDg4SJBIoDhIcEhwIEigSKA4SHBIoEigSKAIS
+HBUSGQESKBIcEigSKBKAuRURgKkBEigdHBURgKkBEhwVEYCpARIcFRGAqQESKB0cFRGAqQESHBUR
+gKkBEigRLBURgKkBEhwVEYCpARIcFRGAqQESKAcABA4OHBwcBCABCAgHIAIIEoC9HAUgABKAxQUg
+ABKAzRIHBhKAvRKAwRKA0QgSgM0SgLUNBwMSHBIcFRGAqQESHAUgABKA1QUgARItDgUgABKA2QUg
+ARIxDgUgABKA3QUgARI1DgUgABKA4QUgARI5CAUAAgIODgUHAggSOQUgABKA8QQgAQ4OBSACDggI
+BAABCA4IBwUOCAgSHA4MBwMSHAIVEYCpARIcBiABEoD5DgYHAhKA+QgDBwEOBCAAEjkFIAASgP0F
+IAIBDg4GIAEBEoEFBQACDg4OByACEoEJDg4GIAEBEYERBSABCBI5GgcIDhIcDhIcFRGAqQESHBEs
+FRGAqQESHBEsBSABARI5BhUSGQESOQYgAQESgRUaBwUVEhkBEjkSKBIcFRGAqQESKBURgKkBEhwO
+BwQSKAgSKBURgKkBEigNBwMSKBIoFRGAqQESKEcBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQu
+MAEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUQLk5FVCBGcmFtZXdvcmsgNC8BACpTVF82Mzg3NzBi
+ZTIyZWY0MDFiOTczODRjZGUzMzc0NzA5MC5jc3Byb2oAAAUBAAAAAA4BAAlNaWNyb3NvZnQAAB8B
+ABpDb3B5cmlnaHQgQCBNaWNyb3NvZnQgMjAwOQAACAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhj
+ZXB0aW9uVGhyb3dzAQBwWQAAAAAAAAAAAACOWQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgFkA
+AAAAAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAYAACAAAAAAAAA
+AAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAAADgEAAAAAAAAAAAA
+ADgENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+AAABAAAAAQBAPm0T
+AAABAEA+bRM/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBhAHIARgBpAGwAZQBJ
+AG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAAsASYAwAAAQBTAHQA
+cgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAB0AwAAAQAwADAAMAAwADAANABiADAAAAA0AAoAAQBD
+AG8AbQBwAGEAbgB5AE4AYQBtAGUAAAAAAE0AaQBjAHIAbwBzAG8AZgB0AAAAgAArAAEARgBpAGwA
+ZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAVABfADYAMwA4ADcANwAwAGIAZQAyADIAZQBm
+ADQAMAAxAGIAOQA3ADMAOAA0AGMAZABlADMAMwA3ADQANwAwADkAMAAuAGMAcwBwAHIAbwBqAAAA
+AABAAA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANAA5ADcAMwAuADEANQA5
+ADMANgAAAAAAgAAvAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA2ADMAOAA3ADcA
+MABiAGUAMgAyAGUAZgA0ADAAMQBiADkANwAzADgANABjAGQAZQAzADMANwA0ADcAMAA5ADAALgBj
+AHMAcAByAG8AagAuAGQAbABsAAAAAABcABsAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
+AABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIABNAGkAYwByAG8AcwBvAGYAdAAgADIAMAAwADkAAAAA
+AIgALwABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAFQAXwA2ADMAOAA3ADcA
+MABiAGUAMgAyAGUAZgA0ADAAMQBiADkANwAzADgANABjAGQAZQAzADMANwA0ADcAMAA5ADAALgBj
+AHMAcAByAG8AagAuAGQAbABsAAAAAAB4ACsAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMA
+VABfADYAMwA4ADcANwAwAGIAZQAyADIAZQBmADQAMAAxAGIAOQA3ADMAOAA0AGMAZABlADMAMwA3
+ADQANwAwADkAMAAuAGMAcwBwAHIAbwBqAAAAAABEAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMA
+aQBvAG4AAAAxAC4AMAAuADQAOQA3ADMALgAxADUAOQAzADYAAAAAAEgADwABAEEAcwBzAGUAbQBi
+AGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADQAOQA3ADMALgAxADUAOQAzADYAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAwAAACgOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+            </ScriptProject>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Cube Partitioning.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{3A106229-18A3-486E-902B-3EC21C693D8E}"
+          DTS:From="Package\Cube Partitioning\Get Relational Partitions"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Cube Partitioning\Update  SSAS Partitions" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Process Dimensions"
+      DTS:CreationName="Microsoft.DataTransformationServices.Tasks.DTSProcessingTask.DTSProcessingTask, Microsoft.SqlServer.ASTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Analysis Services Processing Task"
+      DTS:DTSID="{11D9F954-64DC-48D5-AB36-3857BE3FF094}"
+      DTS:ExecutableType="Microsoft.DataTransformationServices.Tasks.DTSProcessingTask.DTSProcessingTask, Microsoft.SqlServer.ASTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Process Dimensions"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ASProcessingData
+          ConnectionName="SSAS - Adv"
+          ProcessingCommands="&lt;Batch xmlns=&quot;http://schemas.microsoft.com/analysisservices/2003/engine&quot;&gt;&#xA;  &lt;Parallel&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Reseller&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Products&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Sales Channel&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Users&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Date Tool&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Organization&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Sales Territory&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Promotion&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Scenario&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Department&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Sales Reasons&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Customer&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Currency&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Employee&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;DimensionID&gt;Accounts&lt;/DimensionID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessUpdate&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;  &lt;/Parallel&gt;&#xA;&lt;/Batch&gt;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Process Partitions"
+      DTS:CreationName="Microsoft.DataTransformationServices.Tasks.DTSProcessingTask.DTSProcessingTask, Microsoft.SqlServer.ASTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Analysis Services Processing Task"
+      DTS:DTSID="{C990094B-6C72-4009-9D74-E7DB0B979834}"
+      DTS:ExecutableType="Microsoft.DataTransformationServices.Tasks.DTSProcessingTask.DTSProcessingTask, Microsoft.SqlServer.ASTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Process Partitions"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ASProcessingData
+          ConnectionName="SSAS - Adv"
+          ProcessingCommands="&lt;Batch xmlns=&quot;http://schemas.microsoft.com/analysisservices/2003/engine&quot;&gt;&#xA;  &lt;Parallel&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;CubeID&gt;Adv DM 1&lt;/CubeID&gt;&#xA;        &lt;MeasureGroupID&gt;Sales&lt;/MeasureGroupID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessDefault&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;CubeID&gt;Adv DM&lt;/CubeID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessFull&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;CubeID&gt;Adv DM 1&lt;/CubeID&gt;&#xA;        &lt;MeasureGroupID&gt;Bridge Reseller Users&lt;/MeasureGroupID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessFull&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;    &lt;Process xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:ddl2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2&quot; xmlns:ddl2_2=&quot;http://schemas.microsoft.com/analysisservices/2003/engine/2/2&quot; xmlns:ddl100_100=&quot;http://schemas.microsoft.com/analysisservices/2008/engine/100/100&quot;&gt;&#xA;      &lt;Object&gt;&#xA;        &lt;DatabaseID&gt;Adv Works - DW&lt;/DatabaseID&gt;&#xA;        &lt;CubeID&gt;Adv DM 1&lt;/CubeID&gt;&#xA;        &lt;MeasureGroupID&gt;Bridge Employees Users&lt;/MeasureGroupID&gt;&#xA;      &lt;/Object&gt;&#xA;      &lt;Type&gt;ProcessFull&lt;/Type&gt;&#xA;      &lt;WriteBackTableCreation&gt;UseExisting&lt;/WriteBackTableCreation&gt;&#xA;    &lt;/Process&gt;&#xA;  &lt;/Parallel&gt;&#xA;&lt;/Batch&gt;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{15A0BA0B-4E57-4535-A7AE-0DCF40AEB43F}"
+      DTS:From="Package\Process Dimensions"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Process Partitions" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{1523ED63-8150-431F-B55A-EA442CEC980F}"
+      DTS:From="Package\Cube Partitioning"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Process Partitions" />
+  </DTS:PrecedenceConstraints>
+  <DTS:PackageVariables>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{37E1314E-3B67-4EAB-88FA-808DEC7141F9}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{1523ED63-8150-431F-B55A-EA442CEC980F}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{D0F59D78-034C-498C-AB08-C4AE03F38610}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{15A0BA0B-4E57-4535-A7AE-0DCF40AEB43F}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{DD531A4B-2091-483E-B365-B22D1BA4C2FF}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{3A106229-18A3-486E-902B-3EC21C693D8E}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;PrecedenceConstraint xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:EvalOp&gt;Constraint&lt;/dwd:EvalOp&gt;&lt;/PrecedenceConstraint&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{D0E72FEF-45F0-4BB8-AA79-58F115BD7D2D}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="{9D54746F-ECBC-45E9-B51E-192A60618C76}">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;ConnectionManager xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:ProjectReferenceName /&gt;&lt;/ConnectionManager&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{E659041E-30E8-488B-AA10-273BD346EB01}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;1000&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;1000&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="21" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="0" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="43841" y="29395" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsContainerObjectManagedBridge.2" tooltip="Sequence Container" left="1000" top="1000" logicalid="10" controlid="1" masterid="0" hint1="0" hint2="0" width="4286" height="4722" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000be10000072120000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="Caption" value="Cube Partitioning" vartype="8" /&gt;&lt;property name="CaptionHeight" value="1164" vartype="3" /&gt;&lt;property name="Collapsed" value="0" vartype="11" /&gt;&lt;property name="CollapsedWidth" value="16060" vartype="3" /&gt;&lt;property name="LogicalObject" value="Package\Cube Partitioning" vartype="8" /&gt;&lt;property name="RealHeight" value="0" vartype="3" /&gt;&lt;property name="RealWidth" value="0" vartype="3" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="1203" top="2364" logicalid="11" controlid="2" masterid="1" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Cube Partitioning\Get Relational Partitions" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Script Task" left="1204" top="4358" logicalid="12" controlid="3" masterid="1" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Cube Partitioning\Update  SSAS Partitions" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="2603" top="3129" logicalid="13" controlid="4" masterid="0" hint1="0" hint2="0" width="800" height="1729" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Cube Partitioning.PrecedenceConstraints[Constraint]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="2" destid="3" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="3002" y="3528" /&gt;&lt;point x="3002" y="3943" /&gt;&lt;point x="3003" y="3943" /&gt;&lt;point x="3003" y="4358" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Analysis Services Processing Task" left="6443" top="4548" logicalid="14" controlid="5" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Process Dimensions" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Analysis Services Processing Task" left="3747" top="7751" logicalid="15" controlid="6" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Process Partitions" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="2744" top="5323" logicalid="16" controlid="7" masterid="0" hint1="0" hint2="0" width="2652" height="2928" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint 1]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="1" destid="6" sourceattachpoint="7" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="3143" y="5722" /&gt;&lt;point x="3143" y="6736" /&gt;&lt;point x="4996" y="6736" /&gt;&lt;point x="4996" y="7751" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="5697" top="5313" logicalid="17" controlid="8" masterid="0" hint1="0" hint2="0" width="2945" height="2938" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="5" destid="6" sourceattachpoint="7" destattachpoint="8" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="8242" y="5712" /&gt;&lt;point x="8242" y="6731" /&gt;&lt;point x="6096" y="6731" /&gt;&lt;point x="6096" y="7751" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Text" left="6464" top="1059" logicalid="18" controlid="9" masterid="0" hint1="0" hint2="0" width="6953" height="1976" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00020000291b0000b80700000300640000000500008000800000000000002a0001000000bc0244420100065461686f6d61620050006c00650061007300650020006e006f007400650020007400680061007400200079006f00750020006d0075007300740020007200650063006f006e006600690067007500720065000d000a00740068006500200063006f006e006e0065006300740069006f006e0020006d0061006e0061006700650072007300200074006f0020006d0061006b00650020007400680065006d000d000a0070006f0069006e007400200074006f00200079006f00750072002000730065007200760065007200730000000000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj /&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+    <DTS:PackageVariable
+      DTS:CreationName=""
+      DTS:DTSID="{F2003210-1D4B-4330-BE4C-F32E58834040}"
+      DTS:Namespace="dts-designer-1.0"
+      DTS:ObjectName="package-diagram">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="PackageVariableValue">&lt;Package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0"&gt;&lt;dwd:DtsControlFlowDiagram&gt;&lt;dwd:BoundingLeft&gt;1000&lt;/dwd:BoundingLeft&gt;&lt;dwd:BoundingTop&gt;1000&lt;/dwd:BoundingTop&gt;&lt;dwd:Layout&gt;&lt;dds&gt;&lt;diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="Microsoft.DataWarehouse.Layout.GraphLayout110" defaultlineroute="Microsoft.DataWarehouse.Layout.GraphLayout110" version="7" nextobject="21" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="0" scrolltop="0" gridx="150" gridy="150" marginx="1000" marginy="1000" zoom="100" x="43841" y="29395" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="1" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}"&gt;&lt;font&gt;&lt;ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" /&gt;&lt;/font&gt;&lt;mouseicon&gt;&lt;ddsxmlobjectstreamwrapper binary="6c74000000000000" /&gt;&lt;/mouseicon&gt;&lt;/diagram&gt;&lt;layoutmanager&gt;&lt;ddsxmlobj /&gt;&lt;/layoutmanager&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsContainerObjectManagedBridge.2" tooltip="Sequence Container" left="1000" top="1000" logicalid="10" controlid="1" masterid="0" hint1="0" hint2="0" width="4286" height="4722" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00080000be10000072120000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="Caption" value="Cube Partitioning" vartype="8" /&gt;&lt;property name="CaptionHeight" value="1164" vartype="3" /&gt;&lt;property name="Collapsed" value="0" vartype="11" /&gt;&lt;property name="CollapsedWidth" value="16060" vartype="3" /&gt;&lt;property name="LogicalObject" value="Package\Cube Partitioning" vartype="8" /&gt;&lt;property name="RealHeight" value="0" vartype="3" /&gt;&lt;property name="RealWidth" value="0" vartype="3" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Execute SQL Task" left="1203" top="2364" logicalid="11" controlid="2" masterid="1" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Cube Partitioning\Get Relational Partitions" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Script Task" left="1204" top="4358" logicalid="12" controlid="3" masterid="1" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Cube Partitioning\Update  SSAS Partitions" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="2603" top="3129" logicalid="13" controlid="4" masterid="0" hint1="0" hint2="0" width="800" height="1729" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Cube Partitioning.PrecedenceConstraints[Constraint]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="2" destid="3" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="3002" y="3528" /&gt;&lt;point x="3002" y="3943" /&gt;&lt;point x="3003" y="3943" /&gt;&lt;point x="3003" y="4358" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Analysis Services Processing Task" left="6443" top="4548" logicalid="14" controlid="5" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Process Dimensions" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Analysis Services Processing Task" left="3747" top="7751" logicalid="15" controlid="6" masterid="0" hint1="0" hint2="0" width="3598" height="1164" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="000800000e0e00008c040000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package\Process Partitions" vartype="8" /&gt;&lt;property name="ShowConnectorSource" value="0" vartype="2" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="2744" top="5323" logicalid="16" controlid="7" masterid="0" hint1="0" hint2="0" width="2652" height="2928" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint 1]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="1" destid="6" sourceattachpoint="7" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="3143" y="5722" /&gt;&lt;point x="3143" y="6736" /&gt;&lt;point x="4996" y="6736" /&gt;&lt;point x="4996" y="7751" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Polyline" left="5697" top="5313" logicalid="17" controlid="8" masterid="0" hint1="0" hint2="0" width="2945" height="2938" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobj&gt;&lt;polyline endtypedst="3" endtypesrc="1" usercolor="32768" linestyle="0" linerender="2" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" /&gt;&lt;/ddsxmlobj&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj&gt;&lt;property name="LogicalObject" value="Package.PrecedenceConstraints[Constraint]" vartype="8" /&gt;&lt;property name="Virtual" value="0" vartype="11" /&gt;&lt;property name="VisibleAP" value="0" vartype="3" /&gt;&lt;/ddsxmlobj&gt;&lt;/layoutobject&gt;&lt;connector lineroutestyle="Microsoft.DataWarehouse.Layout.GraphLayout110" sourceid="5" destid="6" sourceattachpoint="7" destattachpoint="8" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="2" relatedid="0" virtual="0"&gt;&lt;point x="8242" y="5712" /&gt;&lt;point x="8242" y="6731" /&gt;&lt;point x="6096" y="6731" /&gt;&lt;point x="6096" y="7751" /&gt;&lt;/connector&gt;&lt;/ddscontrol&gt;&lt;ddscontrol controlprogid="MSDDS.Text" left="6464" top="1059" logicalid="18" controlid="9" masterid="0" hint1="0" hint2="0" width="6953" height="1976" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0"&gt;&lt;control&gt;&lt;ddsxmlobjectstreaminitwrapper binary="00020000291b0000b80700000300640000000500008000800000000000002a0001000000bc0244420100065461686f6d61620050006c00650061007300650020006e006f007400650020007400680061007400200079006f00750020006d0075007300740020007200650063006f006e006600690067007500720065000d000a00740068006500200063006f006e006e0065006300740069006f006e0020006d0061006e0061006700650072007300200074006f0020006d0061006b00650020007400680065006d000d000a0070006f0069006e007400200074006f00200079006f00750072002000730065007200760065007200730000000000" /&gt;&lt;/control&gt;&lt;layoutobject&gt;&lt;ddsxmlobj /&gt;&lt;/layoutobject&gt;&lt;shape groupshapeid="0" groupnode="0" /&gt;&lt;/ddscontrol&gt;&lt;/dds&gt;&lt;/dwd:Layout&gt;&lt;/dwd:DtsControlFlowDiagram&gt;&lt;/Package&gt;</DTS:Property>
+    </DTS:PackageVariable>
+  </DTS:PackageVariables>
+</DTS:Executable>

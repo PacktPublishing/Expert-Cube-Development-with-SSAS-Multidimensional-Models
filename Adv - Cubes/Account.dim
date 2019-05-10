@@ -1,0 +1,226 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="93a680de-d629-4dc6-9719-a817bf93fab7" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Accounts</ID>
+  <Name>Account</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="5" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-5697" scrolltop="-16525" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8625" y="8070" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.2" tooltip="Accounts" left="-1938" top="-13520" logicalid="3" controlid="1" masterid="0" hint1="0" hint2="0" width="3545" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000d90d00009b0f0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="CubeFinancial_Accounts" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="-3238" top="-14820" logicalid="4" controlid="2" masterid="0" hint1="0" hint2="0" width="2272" height="2597" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[Accounts-Accounts]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="1" sourceattachpoint="16" destattachpoint="2" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="-1938" y="-12623" />
+              <point x="-2938" y="-12623" />
+              <point x="-2938" y="-14520" />
+              <point x="-1266" y="-14520" />
+              <point x="-1266" y="-13520" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-5697</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-16525</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>-1938</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-13520</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="7a49565a-c17c-4b2c-a93a-877eb18e457a">
+    <DataSourceViewID>Adv DM</DataSourceViewID>
+  </Source>
+  <Type>Accounts</Type>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="d189ae18-07ee-4a6a-8ed4-d137871ed8c1">
+      <ID>Accounts</ID>
+      <Name>ID Account</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>100</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="86751223-ea14-49ba-a781-ab9cdb1c5835">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="63b5874f-8595-4769-9702-2f021b0ce8d8">
+            <TableID>CubeFinancial_Accounts</TableID>
+            <ColumnID>ID_Account</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="f57b6474-7001-412d-85f1-0f9aa858d6e6">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="819c3279-3d28-4a9d-ac3b-ceef61ef1c54">
+          <TableID>CubeFinancial_Accounts</TableID>
+          <ColumnID>Account</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="50e319db-5461-4d9b-93e8-cd7be94a9a0d">
+          <AttributeID>ID Parent Account</AttributeID>
+          <Name>Accounts</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0ab85820-11c0-43aa-a57d-a860c07cebc5">
+          <AttributeID>Account</AttributeID>
+          <Name>Account</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="594ce4d0-d937-4d82-b951-06a1384c1d50">
+          <AttributeID>Account Number</AttributeID>
+          <Name>Account Number</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7bdd92fd-79d6-45d8-8468-c06fc1474279">
+          <AttributeID>Account Type</AttributeID>
+          <Name>Account Type</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="f9c6f850-ed14-4248-99d9-777b7b602871">
+      <ID>ID Parent Account</ID>
+      <Name>Accounts</Name>
+      <Type>Account</Type>
+      <Usage>Parent</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0fb04711-0949-4db7-bcc3-e75a9568cd5c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="34dd8897-a824-4de4-b22e-b392ad3a51c6">
+            <TableID>CubeFinancial_Accounts</TableID>
+            <ColumnID>ID_ParentAccount</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <CustomRollupColumn dwd:design-time-name="3c0cc898-0411-40ca-83cc-1950dd97b23d">
+        <DataType>WChar</DataType>
+        <DataSize>300</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fdd43ef7-3aa5-4a17-ac3e-cfe1b978ba94">
+          <TableID>CubeFinancial_Accounts</TableID>
+          <ColumnID>CustomMembers</ColumnID>
+        </Source>
+      </CustomRollupColumn>
+      <UnaryOperatorColumn dwd:design-time-name="a5df8427-f859-41db-8e3d-977272ec6300">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="68641ea3-de11-461d-80e9-1af36d330a87">
+          <TableID>CubeFinancial_Accounts</TableID>
+          <ColumnID>UnaryOperator</ColumnID>
+        </Source>
+      </UnaryOperatorColumn>
+    </Attribute>
+    <Attribute dwd:design-time-name="c290e97f-e939-433a-97a0-fdf7d676e495">
+      <ID>Account</ID>
+      <Name>Account</Name>
+      <EstimatedCount>99</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d389df1b-eaa6-417b-9493-8833e183167d">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ad4c9965-4220-4259-845b-73de72b953e6">
+            <TableID>CubeFinancial_Accounts</TableID>
+            <ColumnID>Account</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="88702847-b28e-4d97-8c55-ca75381f674a">
+      <ID>Account Number</ID>
+      <Name>Account Number</Name>
+      <EstimatedCount>100</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e7e410f5-532e-4cd2-aa5d-bc01e1692e8c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="037dc3b6-3354-45e1-9b26-67aeb773e262">
+            <TableID>CubeFinancial_Accounts</TableID>
+            <ColumnID>AccountNumber</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>List</InstanceSelection>
+    </Attribute>
+    <Attribute dwd:design-time-name="3c11e00f-28cd-4699-b091-03090b775fa2">
+      <ID>Account Type</ID>
+      <Name>Account Type</Name>
+      <Type>AccountType</Type>
+      <EstimatedCount>8</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="562299be-f90d-4c49-849f-07e16d38b547">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="be4e0802-d601-4edd-b476-32f90030ce2c">
+            <TableID>CubeFinancial_Accounts</TableID>
+            <ColumnID>AccountType</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <InstanceSelection>DropDown</InstanceSelection>
+    </Attribute>
+  </Attributes>
+</Dimension>
